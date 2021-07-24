@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,6 +21,49 @@ code {
 }
 
 :root {
+  /* Colors */
   --color-primary: #dd1515;
+  --color-dark: #141414;
+  --color-dark-light-1: #1f1f1f;
+  --color-dark-light-2: #262626;
   --color-white: #ffffff;
+
+  /* Fonts */
+  --typography-primary: 'Poppins';
+
+  /* Sizes */
+  --font-size-1: 12px; 
+  --font-size-2: 14px; 
+  --font-size-3: 16px; 
+  --font-size-4: 20px; 
+  --font-size-5: 24px; 
+  --font-size-6: 30px; 
+  --font-size-7: 38px; 
+  --font-size-8: 46px; 
+  --font-size-9: 56px; 
+  --font-size-10: 68px;
+
+  /* Line height */
+  --line-height-1: 20px;
+  --line-height-2: 22px;
+  --line-height-3: 24px;
+  --line-height-4: 28px;
+  --line-height-5: 32px;
+  --line-height-6: 38px;
+  --line-height-7: 46px;
+  --line-height-8: 54px;
+  --line-height-9: 64px;
+  --line-height-10: 76px;
+
+  /* Spaces */
+  --baseline: 24px;
+  --space-tiny: calc(var(--baseline)/4);
+  --space-vsm: calc(var(--baseline)/3);
+  --space-sm: calc(var(--baseline)/2);
+  --space-md: var(--baseline);
+  --space-lg: calc(var(--baseline)*2);
+  --space-xl: calc(var(--baseline)*3);
+  --space-xxl: calc(var(--baseline)*4);
+  --space-xxxl: calc(var(--baseline)*5);
+  --space-huge: calc(var(--baseline)*6);
 }
