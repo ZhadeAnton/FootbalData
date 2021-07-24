@@ -1,15 +1,20 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import './app.scss'
 import Header from './Components/Header/Header';
+import MainPage from './Routes/MainPage/MainPage';
+import LeaguesContainer from './Containers/LeaguesContainer';
 
 function App() {
   return (
-    <main className="app">
-      <section className='app__wrapper'>
-        <Header />
-      </section>
-    </main>
+    <>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={MainPage} />
+        <Route exact path='/leagues' component={LeaguesContainer} />
+      </Switch>
+    </>
+
   );
 }
 

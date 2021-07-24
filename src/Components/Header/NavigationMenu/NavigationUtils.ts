@@ -1,3 +1,3 @@
 export const navifationList = [
-  'Leags', 'Teams', 'Info', 'About'
+  'Leagues', 'Teams', 'Info', 'About'
 ]

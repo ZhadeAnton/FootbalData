@@ -1,13 +1,13 @@
-@import './Scss/mixins';
+@import '../../Scss/mixins';
 
-.app {
+.main {
   @include full-size;
   z-index: 1;
 
   &__wrapper {
     @include full-size;
-    height: 100vh;
-    background-image: url(./Assets/JPG/main-bg.jpg);
+    min-height: 100vh;
+    background-image: url(../../Assets/JPG/main-bg.jpg);
     object-fit: cover;
     background-position: center center;
   }
