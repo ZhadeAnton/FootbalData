@@ -1,9 +1,17 @@
 import React from 'react'
 
-export default function LeaguesPage() {
+import { ILeaguesContainer } from '../../Containers/LeaguesContainer'
+import LeaguesList from '../../Components/Leagues/LeaugesList/LeaguesList'
+
+export default function LeaguesPage(props: ILeaguesContainer) {
   return (
     <main className='leagues'>
-      <h2>Leagues</h2>
+      <section className='container'>
+        <LeaguesList
+          leagues={props.leagues}
+          handleClickByLeague={props.handleClickByLeague}
+        />
+      </section>
     </main>
   )
 }
