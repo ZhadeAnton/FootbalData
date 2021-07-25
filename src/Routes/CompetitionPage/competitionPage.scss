@@ -1,0 +1,43 @@
+@import '../../Scss/mixins';
+
+.competition {
+ @include full-size;
+
+  &__header {
+    @include flex-align-center;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-lg);
+
+    &--image {
+      width: 9rem;
+      height: 9rem;
+    }
+
+    &--title {
+      margin-left: 1rem;
+      font-size: var(--font-size-7);
+      font-weight: 600;
+    }
+  }
+
+  &__info {
+    border-bottom: 1px solid var(--color-white-light-4);
+
+    &--text {
+      font-size: var(--font-size-4);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__bottom {
+    padding-top: var(--space-md);
+
+    &--link {
+      font-size: var(--font-size-4);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-dark);
+    }
+  }
+}

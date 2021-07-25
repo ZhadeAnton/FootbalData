@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ICompetition } from '../Interfaces/LeaguesInterfaces'
 import { getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
-import LeaguePage from '../Routes/LeaguePage/LeaguePage'
+import LeaguePage from '../Routes/CompetitionPage/CompetitionPage'
 
 export interface ILeagueContainer {
   competition: ICompetition | null
@@ -20,7 +20,7 @@ export default function CompetitionContainer() {
 
   useEffect(() => {
     dispatch(getCompetitionById(+leagueId))
-  }, [leagueId])
+  }, [])
 
   if (!competition && competition === null) return <div>Loading</div>
 
