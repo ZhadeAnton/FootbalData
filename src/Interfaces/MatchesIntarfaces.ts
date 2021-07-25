@@ -1,18 +1,4 @@
 export interface IMatch {
-  // head2head: {
-  //   numberOfMatches: number,
-  //   totalGoals: 4,
-  //   homeTeam: {
-  //     wins: number,
-  //     draws: number,
-  //     losses: number
-  //   },
-  //   awayTeam: {
-  //     wins: number,
-  //     draws: number,
-  //     losses: number
-  //   }
-  // },
   id: number,
   competition: {
     area: {
@@ -22,6 +8,26 @@ export interface IMatch {
     },
     id: number,
     name: string
+  },
+  score: {
+    duration: string,
+    halfTime: {
+      awayTeam: number,
+      homeTeam: number
+    },
+    fullTime: {
+      awayTeam: number,
+      homeTeam: number
+    },
+    extraTime: {
+      awayTeam: number,
+      homeTeam: number
+    },
+    penalties: {
+      awayTeam: number | null,
+      homeTeam: number | null,
+    }
+    winner: string,
   },
   season: {
     id: number,
@@ -40,6 +46,10 @@ export interface IMatch {
   group: string,
   lastUpdated: Date,
   homeTeam: {
+    id: number,
+    name: string,
+  },
+  awayTeam: {
     id: number,
     name: string,
   }

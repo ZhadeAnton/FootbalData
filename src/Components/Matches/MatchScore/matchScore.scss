@@ -1,0 +1,15 @@
+@import '../../../Scss/mixins';
+
+.match-score {
+  @include flex-align-center;
+
+  &__info {
+    &--number {
+
+    }
+
+    &--separator {
+      margin: 0 .2rem;
+    }
+  }
+}
