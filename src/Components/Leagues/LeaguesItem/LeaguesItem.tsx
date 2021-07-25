@@ -20,11 +20,6 @@ export default function LeaugesItem(props: Props) {
 
       <div>
         <span>
-          { props.league.plan }
-        </span>
-
-        <span>
-          { props.league.currentSeasone }
         </span>
       </div>
     </li>

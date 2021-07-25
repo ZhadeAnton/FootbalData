@@ -1,4 +1,4 @@
-import { ILeague } from '../../Interfaces/LeaguesInterfaces'
+import { ICompetition, ILeague } from '../../Interfaces/LeaguesInterfaces'
 
 export const GET_ALL_LEAGUES = 'GET_ALL_LEAGUES'
 export interface GetAllLeagues {
@@ -17,7 +17,14 @@ export interface GetCompetitionById {
   payload: ILeague['id']
 }
 
+export const GET_COMPETITION_BY_ID_SUCCESS = 'GET_COMPETITION_BY_ID_SUCCESS'
+export interface GetCompetitionByIdSuccess {
+  type: typeof GET_COMPETITION_BY_ID_SUCCESS,
+  payload: ICompetition
+}
+
 export type LeaguesTypes =
 | GetAllLeagues
 | GetAllLeaguesSuccess
 | GetCompetitionById
+| GetCompetitionByIdSuccess

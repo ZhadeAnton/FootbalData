@@ -16,7 +16,7 @@ export default function NavigationMenu() {
             <li
               className='navigation-menu__list--item'
               key={item}
-              onClick={() => history(item.toLocaleLowerCase())}
+              onClick={() => history(`/${item.toLocaleLowerCase()}`)}
             >
               {item}
             </li>

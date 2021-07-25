@@ -19,8 +19,7 @@ function* getCompetitionById({payload}) {
     // Payload this is id of competition getted from action creator
     const response = yield call(API.fetchCompetitionById, payload)
     const competition = yield response.data
-    yield console.log(competition)
-    // yield put(actions.getAllLeaguesSuccess(leagues.competitions))
+    yield put(actions.getCompetitionByIdSuccess(competition))
   } catch (error) {
     console.error(error)
   }

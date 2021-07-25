@@ -6,7 +6,7 @@ export interface ILeague {
     countryCode: string
   },
   code: string | null,
-  currentSeasone: {
+  currentSeason: {
     id: number,
     currentMatchday: number,
     endDate: Date,
@@ -19,6 +19,17 @@ export interface ILeague {
   name: string,
   numberOfAvailableSeasons: number,
   plan: string
+}
+
+export interface ICompetition extends ILeague {
+  seasons: [
+    {
+      id: number,
+      startDate: Date,
+      endDate: Date,
+      currentMatchday: number
+    }
+  ]
 }
 
 export interface IFnGetCompetitionById {

@@ -5,7 +5,7 @@ import { BASE_URL, API_KEY } from './APIUtils';
 export function featchAllLeagues() {
   return axios({
     method: 'get',
-    url: `https://${BASE_URL}/v2/competitions/`,
+    url: `https://${BASE_URL}/v2/competitions/?plan=TIER_ONE`,
     headers: {
       'X-Auth-Token': API_KEY
     }
