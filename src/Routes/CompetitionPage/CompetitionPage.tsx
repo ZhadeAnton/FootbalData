@@ -55,6 +55,14 @@ export default function LeaugePage(props: ILeagueContainer) {
           >
             Sheadule for { props.competition?.name }
           </NavLink>
+
+          <NavLink
+            className='competition__bottom--link'
+            to='/mathes'
+            onClick={() => props.handleClickByTeamsLink()}
+          >
+            List of teams { props.competition?.name }
+          </NavLink>
         </div>
       </section>
     </main>
