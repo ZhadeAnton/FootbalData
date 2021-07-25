@@ -1,7 +1,14 @@
 import React from 'react'
 
-export default function MatchesPage() {
+import { IMatchesContainer } from '../../Containers/MatchesContainer'
+import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
+
+export default function MatchesPage(props: IMatchesContainer) {
   return (
-    <main>Matches</main>
+    <main>
+      <section>
+        <MatchesList matches={props.matches}/>
+      </section>
+    </main>
   )
 }

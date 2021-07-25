@@ -21,3 +21,13 @@ export function fetchCompetitionById(id: number) {
     }
   })
 }
+
+export function fetchAllMatchesByCompetitionId(id: number) {
+  return axios({
+    method: 'get',
+    url: `https://${BASE_URL}/competitions/${id}/matches`,
+    headers: {
+      'X-Auth-Token': API_KEY
+    }
+  })
+}

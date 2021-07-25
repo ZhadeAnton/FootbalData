@@ -1,4 +1,5 @@
 import { ICompetition, ILeague } from '../../Interfaces/LeaguesInterfaces'
+import { IMatch } from '../../Interfaces/MatchesIntarfaces'
 import * as types from './LeaguesActionTypes'
 
 export const getAllLeagues = (): types.GetAllLeagues => ({
@@ -20,4 +21,16 @@ export const getCompetitionByIdSuccess = (competition: ICompetition)
   : types.GetCompetitionByIdSuccess => ({
   type: types.GET_COMPETITION_BY_ID_SUCCESS,
   payload: competition
+})
+
+export const getMatchesByCompetitionId = (id: ICompetition['id'])
+  : types.GetMatchesByCompetitionId => ({
+  type: types.GET_MATCHES_BY_COMPETITION_ID,
+  payload: id
+})
+
+export const getMatchesByCompetitionIdSuccess = (matches: Array<IMatch>)
+  : types.GetMatchesByCompetitionIdSuccess => ({
+  type: types.GET_MATCHES_BY_COMPETITION_ID_SUCCESS,
+  payload: matches
 })
