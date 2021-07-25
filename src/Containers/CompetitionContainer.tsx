@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ICompetition } from '../Interfaces/LeaguesInterfaces'
@@ -9,24 +9,25 @@ import LeaguePage from '../Routes/CompetitionPage/CompetitionPage'
 
 export interface ILeagueContainer {
   competition: ICompetition | null,
-  handleClickByTeamsLink: () => void
+  handleGetShedule: () => void
 }
 
 export default function CompetitionContainer() {
   const dispatch = useAppDispatch()
-  const location = useLocation()
   const history = useHistoryPush()
+  const params = useParams()
 
   // Get league id from location for call getCompetitionById
-  const leagueId = (location.pathname.slice(-4))
+  const leagueId = params.id
+
   const competition = useAppSelector((state) => state.league.competition!)
 
   useEffect(() => {
-    dispatch(getCompetitionById(+leagueId))
+    dispatch(getCompetitionById(leagueId))
   }, [])
 
-  const handleClickByTeamsLink = () => {
-    history(`/leagues/${leagueId}/mathes`)
+  const handleGetShedule = () => {
+    history(`/leagues/${leagueId}/matches`)
   }
 
   if (!competition && competition === null) return <div>Loading</div>
@@ -34,7 +35,7 @@ export default function CompetitionContainer() {
   return (
     <LeaguePage
       competition={competition}
-      handleClickByTeamsLink={handleClickByTeamsLink}
+      handleGetShedule={handleGetShedule}
     />
   )
 }

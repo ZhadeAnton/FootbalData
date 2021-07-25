@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 import './competitionPage.scss'
 import { ILeagueContainer } from '../../Containers/CompetitionContainer'
@@ -49,20 +48,12 @@ export default function LeaugePage(props: ILeagueContainer) {
         </div>
 
         <div className='competition__bottom'>
-          <NavLink
+          <button
             className='competition__bottom--link'
-            to='/mathes'
+            onClick={props.handleGetShedule}
           >
             Sheadule for { props.competition?.name }
-          </NavLink>
-
-          <NavLink
-            className='competition__bottom--link'
-            to='/mathes'
-            onClick={() => props.handleClickByTeamsLink()}
-          >
-            List of teams { props.competition?.name }
-          </NavLink>
+          </button>
         </div>
       </section>
     </main>

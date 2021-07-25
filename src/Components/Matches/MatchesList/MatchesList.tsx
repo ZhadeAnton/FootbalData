@@ -15,7 +15,7 @@ export default function MatchesList(props: Props) {
         {
           props.matches.map((match) => (
             <MatchItem
-              key={'match.match.id'}
+              key={match.id.toString()}
               match={match}
             />
           ))

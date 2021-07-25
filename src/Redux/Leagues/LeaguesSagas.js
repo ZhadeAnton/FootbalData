@@ -30,6 +30,7 @@ function* getCompetitionMatches({payload}) {
     // Payload this is id of competition getted from action creator
     const response = yield call(API.fetchAllMatchesByCompetitionId, payload)
     const matches = yield response.data
+    yield console.log(matches)
     yield put(actions.getMatchesByCompetitionIdSuccess(matches.matches))
   } catch (error) {
     console.error(error)

@@ -10,6 +10,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-style: normal;
   font-size: initial;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -36,6 +38,10 @@ code {
   /* Colors */
   --color-primary: #dd1515;
   --color-dark: #141414;
+  --color-lime: #7cb305;
+  --color-red: #ff4d4f;
+  --color-blue: #17A2B8;
+  --color-orange: #ffd591;
   --color-dark-light-1: #1f1f1f;
   --color-dark-light-2: #262626;
   --color-white: #ffffff;

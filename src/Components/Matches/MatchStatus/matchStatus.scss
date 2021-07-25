@@ -1,0 +1,32 @@
+.match-status {
+  background-color: grey;
+  padding: .2rem .9rem;
+  border-radius: 10rem;
+
+  &__finished {
+    background-color: var(--color-lime);
+  }
+
+  &__postponed,
+  &__canceled,
+  &__suspended,
+  &__paused {
+    background-color: var(--color-red);
+  }
+
+  &__scheduled {
+    background-color: var(--color-blue);
+  }
+
+  &__live,
+  &__in_play {
+    background-color: var(--color-orange);
+  }
+
+  &__title {
+    font-size: var(--font-size-1);
+    font-weight: 600;
+    color: var(--color-white);
+    text-transform: capitalize;
+  }
+}

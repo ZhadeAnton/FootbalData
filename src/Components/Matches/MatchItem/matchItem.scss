@@ -1,0 +1,18 @@
+@import '../../../Scss/mixins';
+
+.match-item {
+  @include flex-align-center;
+  margin: 1rem 0;
+  padding: .4rem;
+
+  &__dates {
+    font-size: var(--font-size-2);
+    & > * {
+      margin: 0 .3rem;
+    }
+  }
+
+  &__status {
+
+  }
+}
