@@ -14,7 +14,23 @@ export default function LeaugesItem(props: Props) {
       className='leagues-item'
       onClick={() => props.handleClickByLeague(props.league.id)}
     >
-      <h4>
+      {
+        props.league.emblemUrl
+        ?
+          <img
+            className='leagues-item__logo'
+            src={props.league.emblemUrl}
+            alt="League"
+          />
+        :
+          <img
+            className='leagues-item__logo'
+            src='https://i.ibb.co/12hkB1M/image-1.png'
+            alt="UFL"
+          />
+      }
+
+      <h4 className='leagues-item__title'>
         { props.league.name }
       </h4>
 

@@ -6,10 +6,12 @@ import LeaguesList from '../../Components/Leagues/LeaugesList/LeaguesList'
 export default function LeaguesPage(props: ILeaguesContainer) {
   return (
     <main className='leagues'>
-      <LeaguesList
-        leagues={props.leagues}
-        handleClickByLeague={props.handleClickByLeague}
-      />
+      <section className='container'>
+        <LeaguesList
+          leagues={props.leagues}
+          handleClickByLeague={props.handleClickByLeague}
+        />
+      </section>
     </main>
   )
 }

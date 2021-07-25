@@ -6,9 +6,5 @@
 
   &__wrapper {
     @include full-size;
-    min-height: 100vh;
-    background-image: url(../../Assets/JPG/main-bg.jpg);
-    object-fit: cover;
-    background-position: center center;
   }
 }
