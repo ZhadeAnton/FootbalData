@@ -1,0 +1,10 @@
+.leagues-item {
+  margin: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: whitesmoke;
+
+  &:hover {
+    background-color: rgb(166, 166, 245);;
+  }
+}

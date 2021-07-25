@@ -14,12 +14,29 @@ function* getAllLeagues() {
   }
 }
 
+function* getCompetitionById({payload}) {
+  try {
+    // Payload this is id of competition getted from action creator
+    const response = yield call(API.fetchCompetitionById, payload)
+    const competition = yield response.data
+    yield console.log(competition)
+    // yield put(actions.getAllLeaguesSuccess(leagues.competitions))
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 function* onGetAllLeagues() {
   yield takeLatest(types.GET_ALL_LEAGUES, getAllLeagues)
 }
 
+function* onGetCompetitionById() {
+  yield takeLatest(types.GET_COMPETITION_BY_ID, getCompetitionById)
+}
+
 export default function* leaguesSagas() {
   yield all([
-    call(onGetAllLeagues)
+    call(onGetAllLeagues),
+    call(onGetCompetitionById)
   ])
 }

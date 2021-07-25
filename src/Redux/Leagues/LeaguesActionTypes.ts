@@ -11,6 +11,13 @@ export interface GetAllLeaguesSuccess {
   payload: Array<ILeague>
 }
 
+export const GET_COMPETITION_BY_ID = 'GET_COMPETITION_BY_ID'
+export interface GetCompetitionById {
+  type: typeof GET_COMPETITION_BY_ID,
+  payload: ILeague['id']
+}
+
 export type LeaguesTypes =
 | GetAllLeagues
 | GetAllLeaguesSuccess
+| GetCompetitionById

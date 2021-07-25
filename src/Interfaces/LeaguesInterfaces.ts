@@ -20,3 +20,7 @@ export interface ILeague {
   numberOfAvailableSeasons: number,
   plan: string
 }
+
+export interface IFnGetCompetitionById {
+  (id: ILeague['id']): void
+}

@@ -6,7 +6,12 @@ export const getAllLeagues = (): actions.GetAllLeagues => ({
 })
 
 export const getAllLeaguesSuccess = (leagues: Array<ILeague>)
-  : actions.GetAllLeaguesSuccess => ({
+ : actions.GetAllLeaguesSuccess => ({
   type: actions.GET_ALL_LEAGUES_SUCCESS,
   payload: leagues
+})
+
+export const getCompetitionById = (id: ILeague['id']): actions.GetCompetitionById => ({
+  type: actions.GET_COMPETITION_BY_ID,
+  payload: id
 })
