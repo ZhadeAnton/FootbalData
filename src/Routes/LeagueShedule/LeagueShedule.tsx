@@ -21,7 +21,10 @@ export default function LeagueShedule(props: ILeagueSheduleContainer) {
           </div>
         </div>
 
-        <MatchesList matches={props.leagueShedule.matches}/>
+        <MatchesList
+          matches={props.leagueShedule.matches}
+          handleClickByMatch={props.handleClickByMatch}
+        />
       </section>
     </main>
   )

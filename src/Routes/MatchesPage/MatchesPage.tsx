@@ -7,7 +7,10 @@ export default function MatchesPage(props: IMatchesContainer) {
   return (
     <main>
       <section>
-        <MatchesList matches={props.matches}/>
+        <MatchesList
+          matches={props.matches}
+          handleClickByMatch={props.handleClickByMatch}
+        />
       </section>
     </main>
   )

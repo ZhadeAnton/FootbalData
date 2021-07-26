@@ -2,13 +2,14 @@ import React, { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IMatch } from '../Interfaces/MatchesIntarfaces'
-import { getAllMatches } from '../Redux/Matches/MatchesActionCreators'
+import { getAllMatches, getMatchById } from '../Redux/Matches/MatchesActionCreators'
 import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
 import MatchesPage from '../Routes/MatchesPage/MatchesPage'
 import Preloader from '../Components/Preloader/Preloader'
 
 export interface IMatchesContainer {
-  matches: Array<IMatch>
+  matches: Array<IMatch>,
+  handleClickByMatch: (id: number) => void
 }
 
 export default function MatchesContainer() {
@@ -24,11 +25,16 @@ export default function MatchesContainer() {
     }
   }, [])
 
+  const handleClickByMatch = (id: number) => {
+    dispatch(getMatchById(id))
+  }
+
   if (!matches && matches === null) return <Preloader />
 
   return (
     <MatchesPage
       matches={matches}
+      handleClickByMatch={handleClickByMatch}
     />
   )
 }

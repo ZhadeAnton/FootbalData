@@ -10,3 +10,8 @@ export const getAllMatchesSuccess = (matches: Array<IMatch>)
   type: types.GET_ALL_MATHCES_SUCCESS,
   payload: matches
 })
+
+export const getMatchById = (id: number): types.GetMatchById => ({
+  type: types.GET_MATCH_BY_ID,
+  payload: id
+})

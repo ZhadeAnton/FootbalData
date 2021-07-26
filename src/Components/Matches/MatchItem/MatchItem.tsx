@@ -9,12 +9,15 @@ import MatchScore from '../MatchScore/MatchScore'
 import MatchWinner from '../MatchWinner/MatchWinner'
 
 interface Props {
-  match: IMatch
+  match: IMatch,
+  handleClickByMatch: (id: number) => void
 }
 
 export default function MatchItem(props: Props) {
   return (
-    <li className='match-item'>
+    <li className='match-item'
+      onClick={() => props.handleClickByMatch(props.match.id)}
+    >
       <div className='match-item__dates'>
         <div className='match-item__dates--date'>
           <MatchDate

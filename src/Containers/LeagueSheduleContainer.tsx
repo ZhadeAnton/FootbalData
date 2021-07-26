@@ -8,9 +8,11 @@ import LeagueShedule from '../Routes/LeagueShedule/LeagueShedule'
 import {
   clearLeagues,
   getMatchesByCompetitionId } from '../Redux/Leagues/LeaguesActionCreators'
+import { getMatchById } from '../Redux/Matches/MatchesActionCreators'
 
 export interface ILeagueSheduleContainer {
-  leagueShedule: ILeagueShedule
+  leagueShedule: ILeagueShedule,
+  handleClickByMatch: (id: number) => void
 }
 
 export default function LeagueShuduleContainer() {
@@ -28,11 +30,16 @@ export default function LeagueShuduleContainer() {
     }
   }, [])
 
+  const handleClickByMatch = (id: number) => {
+    dispatch(getMatchById(id))
+  }
+
   if (leagueShedule === null) return <Preloader />
 
   return (
     <LeagueShedule
       leagueShedule={leagueShedule}
+      handleClickByMatch={handleClickByMatch}
     />
   )
 }

@@ -5,7 +5,8 @@ import { IMatch } from '../../../Interfaces/MatchesIntarfaces'
 import MatchItem from '../MatchItem/MatchItem'
 
 interface Props {
-  matches: Array<IMatch>
+  matches: Array<IMatch>,
+  handleClickByMatch: (id: number) => void
 }
 
 export default function MatchesList(props: Props) {
@@ -17,6 +18,7 @@ export default function MatchesList(props: Props) {
             <MatchItem
               key={match.id.toString()}
               match={match}
+              handleClickByMatch={props.handleClickByMatch}
             />
           ))
         }
