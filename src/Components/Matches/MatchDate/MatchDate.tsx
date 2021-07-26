@@ -14,11 +14,11 @@ export default function MatchDate(props: Props) {
       {
         props.parseBy === 'Date'
         ?
-          moment(props.entryDate).format('YYYY-MM-DD')
+          moment(props.entryDate).format('MM/DD/YY')
         :
           props.parseBy === 'Time'
         ?
-          moment(props.entryDate).format('h:mm')
+          moment(props.entryDate).format('h:mm:ss')
         : null
       }
     </time>

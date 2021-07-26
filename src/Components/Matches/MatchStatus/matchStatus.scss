@@ -1,7 +1,11 @@
+@import '../../../Scss/variables';
+
 .match-status {
-  background-color: grey;
+  background-color: var(--color-grey);
   padding: .2rem .9rem;
   border-radius: 10rem;
+  max-width: 7rem;
+  text-align: center;
 
   &__finished {
     background-color: var(--color-lime);
@@ -28,5 +32,12 @@
     font-weight: 600;
     color: var(--color-white);
     text-transform: capitalize;
+  }
+
+    @include media-breakpoint-down(lg) {
+      padding: .2rem .8rem;
+      border-radius: 10rem;
+      max-width: 6rem;
+      text-align: center;
   }
 }

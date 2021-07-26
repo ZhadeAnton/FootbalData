@@ -1,4 +1,6 @@
 import React from 'react'
+
+import './matchTeam.scss'
 import { IMatch } from '../../../Interfaces/MatchesIntarfaces'
 
 interface Props {
@@ -7,7 +9,7 @@ interface Props {
 
 export default function MatchTeam(props: Props) {
   return (
-    <div>
+    <div className='match-team'>
       { props.team.name }
     </div>
   )

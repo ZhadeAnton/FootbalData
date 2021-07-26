@@ -16,7 +16,7 @@ function* getAllLeagues() {
 
 function* getCompetitionById({payload}) {
   try {
-    // Payload this is id of competition getted from action creator
+    // Payload this is id from action creator
     const response = yield call(API.fetchCompetitionById, payload)
     const competition = yield response.data
     yield put(actions.getCompetitionByIdSuccess(competition))
@@ -27,11 +27,10 @@ function* getCompetitionById({payload}) {
 
 function* getCompetitionMatches({payload}) {
   try {
-    // Payload this is id of competition getted from action creator
+    // Payload this is id from action creator
     const response = yield call(API.fetchAllMatchesByCompetitionId, payload)
-    const matches = yield response.data
-    yield console.log(matches)
-    yield put(actions.getMatchesByCompetitionIdSuccess(matches.matches))
+    const sheduleObject = yield response.data
+    yield put(actions.getMatchesByCompetitionIdSuccess(sheduleObject))
   } catch (error) {
     console.error(error)
   }

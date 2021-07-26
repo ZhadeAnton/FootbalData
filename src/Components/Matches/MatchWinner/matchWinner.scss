@@ -1,7 +1,12 @@
 .match-winner {
-  margin: 0 1rem;
+  display: inline-block;
 
   &__draw {
-    color: red;
+    color: var(--color-grey);
+  }
+
+  &__title {
+    font-size: inherit;
+    font-weight: inherit;
   }
 }

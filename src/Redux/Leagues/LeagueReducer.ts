@@ -1,19 +1,19 @@
 import { LeaguesTypes } from './LeaguesActionTypes'
 import * as types from './LeaguesActionTypes'
 import { ICompetition, ILeague } from '../../Interfaces/LeaguesInterfaces'
-import { IMatch } from '../../Interfaces/MatchesIntarfaces'
+import { ILeagueShedule } from '../../Interfaces/MatchesIntarfaces'
 
 interface ILeaguesState {
   leagues: Array<ILeague> | [],
   competition: ICompetition | null,
-  mathesByCompetition: Array<IMatch> | [],
+  leagueShedule: ILeagueShedule | null,
   isLoading: boolean
 }
 
 const INITIAL_STATE: ILeaguesState = {
   leagues: [],
   competition: null,
-  mathesByCompetition: [],
+  leagueShedule: null,
   isLoading: false
 }
 
@@ -43,7 +43,7 @@ const leaguesReducer = (state = INITIAL_STATE, action: LeaguesTypes): ILeaguesSt
     case types.GET_MATCHES_BY_COMPETITION_ID_SUCCESS:
       return {
         ...state,
-        mathesByCompetition: [...action.payload]
+        leagueShedule: action.payload
       }
 
     default:

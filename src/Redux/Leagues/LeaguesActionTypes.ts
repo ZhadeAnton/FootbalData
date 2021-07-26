@@ -1,5 +1,5 @@
 import { ICompetition, ILeague } from '../../Interfaces/LeaguesInterfaces'
-import { IMatch } from '../../Interfaces/MatchesIntarfaces'
+import { ILeagueShedule } from '../../Interfaces/MatchesIntarfaces'
 
 export const GET_ALL_LEAGUES = 'GET_ALL_LEAGUES'
 export interface GetAllLeagues {
@@ -34,7 +34,7 @@ export const GET_MATCHES_BY_COMPETITION_ID_SUCCESS =
 'GET_MATCHES_BY_COMPETITION_ID_SUCCESS'
 export interface GetMatchesByCompetitionIdSuccess {
   type: typeof GET_MATCHES_BY_COMPETITION_ID_SUCCESS,
-  payload: Array<IMatch>
+  payload: ILeagueShedule
 }
 
 export type LeaguesTypes =

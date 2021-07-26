@@ -1,18 +1,15 @@
 import React from 'react'
 
-import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
 import { ILeagueSheduleContainer } from '../../Containers/LeagueSheduleContainer'
+import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
+import SheaduleLeangthInfo from '../../Components/Sheadule/SheaduleInfo/SheaduleInfo'
 
 export default function LeagueShudule(props: ILeagueSheduleContainer) {
   return (
     <main>
-      <section>
-        <div>
-          <h3>
-            {props.matches.length} was finded
-          </h3>
-        </div>
-        <MatchesList matches={props.matches}/>
+      <section className='container'>
+        <SheaduleLeangthInfo sheaduleLeangth={props.leagueShedule.matches.length}/>
+        <MatchesList matches={props.leagueShedule.matches}/>
       </section>
     </main>
   )

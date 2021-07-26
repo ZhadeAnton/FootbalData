@@ -2,28 +2,30 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { IMatch } from '../Interfaces/MatchesIntarfaces'
+import { ILeagueShedule } from '../Interfaces/MatchesIntarfaces'
 import { getMatchesByCompetitionId } from '../Redux/Leagues/LeaguesActionCreators'
 import LeagueShudule from '../Routes/LeagueShudule/LeagueShudule'
 
 export interface ILeagueSheduleContainer {
-  matches: Array<IMatch>
+  leagueShedule: ILeagueShedule
 }
 
 export default function LeagueShuduleContainer() {
   const dispatch = useAppDispatch()
-  const params = useParams()
+  const params: any = useParams()
 
   const leagueId = params.id
-  const matches = useAppSelector((state) => state.league.mathesByCompetition)
+  const leagueShedule = useAppSelector((state) => state.league.leagueShedule)
 
   useEffect(() => {
     dispatch(getMatchesByCompetitionId(leagueId))
   }, [])
 
+  if (!leagueShedule) return <div>Loading</div>
+
   return (
     <LeagueShudule
-      matches={matches}
+      leagueShedule={leagueShedule}
     />
   )
 }

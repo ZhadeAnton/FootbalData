@@ -54,3 +54,19 @@ export interface IMatch {
     name: string,
   }
 }
+
+export interface ILeagueShedule {
+  competition: {
+    area: {
+      id: number,
+      name: string
+    },
+    code: string,
+    id: number,
+    lastUpdated: Date,
+    name: string,
+    plan: string
+  },
+  filters: {},
+  matches: Array<IMatch>
+}

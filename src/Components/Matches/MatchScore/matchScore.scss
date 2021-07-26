@@ -1,11 +1,9 @@
 @import '../../../Scss/mixins';
 
 .match-score {
-  @include flex-align-center;
-
   &__info {
     &--number {
-
+      font-weight: 600;
     }
 
     &--separator {

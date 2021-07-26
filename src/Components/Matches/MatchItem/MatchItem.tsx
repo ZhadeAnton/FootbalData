@@ -16,15 +16,19 @@ export default function MatchItem(props: Props) {
   return (
     <li className='match-item'>
       <div className='match-item__dates'>
-        <MatchDate
-          parseBy='Date'
-          entryDate={props.match.utcDate}
-        />
+        <div className='match-item__dates--date'>
+          <MatchDate
+            parseBy='Date'
+            entryDate={props.match.utcDate}
+          />
+        </div>
 
-        <MatchDate
-          parseBy='Time'
-          entryDate={props.match.utcDate}
-        />
+        <div className='match-item__time'>
+          <MatchDate
+            parseBy='Time'
+            entryDate={props.match.utcDate}
+          />
+        </div>
       </div>
 
       <div className='match-item__status'>
@@ -33,11 +37,15 @@ export default function MatchItem(props: Props) {
 
       <div className='match-item__teams'>
         <MatchTeam team={props.match.awayTeam}/>
-        vs
+        <span className='match-item__teams--separator'>
+          vs
+        </span>
         <MatchTeam team={props.match.homeTeam}/>
       </div>
 
-      <MatchScore score={props.match.score}/>
+      <div className='match-item__score'>
+        <MatchScore score={props.match.score}/>
+      </div>
 
       <div className='match-item__info'>
         <MatchWinner

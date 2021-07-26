@@ -15,7 +15,7 @@ export interface ILeagueContainer {
 export default function CompetitionContainer() {
   const dispatch = useAppDispatch()
   const history = useHistoryPush()
-  const params = useParams()
+  const params: any = useParams()
 
   // Get league id from location for call getCompetitionById
   const leagueId = params.id
