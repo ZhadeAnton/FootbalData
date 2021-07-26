@@ -1,15 +1,23 @@
 import React from 'react'
 
+import './sheaduleInfo.scss'
+import { ICompetition } from '../../../Interfaces/LeaguesInterfaces'
+
 interface Props {
-  sheaduleLeangth: number
+  competitionName: ICompetition['name'],
+  competitionArea: ICompetition['area']['name']
 }
 
-export default function SheaduleLeangthInfo(props: Props) {
+export default function SheaduleInfo(props: Props) {
   return (
-    <section>
-      <h3>
-        { props.sheaduleLeangth } was finded
+    <div className='shedule-info'>
+      <h1 className='shedule-info__title'>
+          Shedule for <strong>{ props.competitionName }</strong> league
+      </h1>
+
+      <h3 className='shedule-info__title'>
+          Location: <strong>{ props.competitionArea}</strong>
       </h3>
-    </section>
+    </div>
   )
 }

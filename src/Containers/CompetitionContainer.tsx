@@ -6,6 +6,7 @@ import { ICompetition } from '../Interfaces/LeaguesInterfaces'
 import { getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
 import LeaguePage from '../Routes/CompetitionPage/CompetitionPage'
+import Preloader from '../Components/Preloader/Preloader'
 
 export interface ILeagueContainer {
   competition: ICompetition | null,
@@ -30,7 +31,7 @@ export default function CompetitionContainer() {
     history(`/leagues/${leagueId}/matches`)
   }
 
-  if (!competition && competition === null) return <div>Loading</div>
+  if (!competition && competition === null) return <Preloader />
 
   return (
     <LeaguePage

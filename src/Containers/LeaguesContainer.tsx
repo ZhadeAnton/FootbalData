@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IFnGetCompetitionById, ILeague } from '../Interfaces/LeaguesInterfaces'
 import { getAllLeagues, getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
 import LeaguesPage from '../Routes/LeaguesPage/LeaguesPage'
+import Preloader from '../Components/Preloader/Preloader'
 
 export interface ILeaguesContainer {
   leagues: Array<ILeague>,
@@ -25,6 +26,8 @@ export default function LeaguesContainer() {
     dispatch(getCompetitionById(id))
     history(`/leagues/${id}`)
   }
+
+  if (!leagues && leagues === null) return <Preloader />
 
   return (
     <LeaguesPage
