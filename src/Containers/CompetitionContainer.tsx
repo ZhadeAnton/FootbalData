@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ICompetition } from '../Interfaces/LeaguesInterfaces'
-import { getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
+import { clearLeagues, getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
 import LeaguePage from '../Routes/CompetitionPage/CompetitionPage'
 import Preloader from '../Components/Preloader/Preloader'
@@ -25,6 +25,10 @@ export default function CompetitionContainer() {
 
   useEffect(() => {
     dispatch(getCompetitionById(leagueId))
+
+    return () => {
+      dispatch(clearLeagues())
+    }
   }, [])
 
   const handleGetShedule = () => {

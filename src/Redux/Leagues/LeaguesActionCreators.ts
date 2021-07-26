@@ -34,3 +34,7 @@ export const getMatchesByCompetitionIdSuccess = (matches: ILeagueShedule)
   type: types.GET_MATCHES_BY_COMPETITION_ID_SUCCESS,
   payload: matches
 })
+
+export const clearLeagues = (): types.ClearLeagues => ({
+  type: types.CLEAR_LEAGUES
+})

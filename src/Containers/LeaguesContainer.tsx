@@ -3,7 +3,10 @@ import React, { useEffect } from 'react'
 import useHistoryPush from '../Hooks/useHistory'
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IFnGetCompetitionById, ILeague } from '../Interfaces/LeaguesInterfaces'
-import { getAllLeagues, getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
+import {
+  clearLeagues,
+  getAllLeagues,
+  getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
 import LeaguesPage from '../Routes/LeaguesPage/LeaguesPage'
 import Preloader from '../Components/Preloader/Preloader'
 
@@ -20,6 +23,10 @@ export default function LeaguesContainer() {
 
   useEffect(() => {
     dispatch(getAllLeagues())
+
+    return () => {
+      dispatch(clearLeagues())
+    }
   }, [])
 
   const handleClickByLeague: IFnGetCompetitionById = (id) => {

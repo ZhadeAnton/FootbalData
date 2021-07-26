@@ -37,6 +37,11 @@ export interface GetMatchesByCompetitionIdSuccess {
   payload: ILeagueShedule
 }
 
+export const CLEAR_LEAGUES = 'CLEAR_LEAGUES'
+export interface ClearLeagues {
+  type: typeof CLEAR_LEAGUES
+}
+
 export type LeaguesTypes =
 | GetAllLeagues
 | GetAllLeaguesSuccess
@@ -44,3 +49,4 @@ export type LeaguesTypes =
 | GetCompetitionByIdSuccess
 | GetMatchesByCompetitionId
 | GetMatchesByCompetitionIdSuccess
+| ClearLeagues

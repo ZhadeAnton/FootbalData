@@ -46,6 +46,15 @@ const leaguesReducer = (state = INITIAL_STATE, action: LeaguesTypes): ILeaguesSt
         leagueShedule: action.payload
       }
 
+    case types.CLEAR_LEAGUES:
+      return {
+        ...state,
+        leagues: [],
+        competition: null,
+        leagueShedule: null,
+        isLoading: false
+      }
+
     default:
       return state
   }

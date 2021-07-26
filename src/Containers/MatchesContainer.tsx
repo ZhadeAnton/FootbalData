@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IMatch } from '../Interfaces/MatchesIntarfaces'
 import { getAllMatches } from '../Redux/Matches/MatchesActionCreators'
+import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
 import MatchesPage from '../Routes/MatchesPage/MatchesPage'
 import Preloader from '../Components/Preloader/Preloader'
 
@@ -17,6 +18,10 @@ export default function MatchesContainer() {
 
   useEffect(() => {
     dispatch(getAllMatches())
+
+    return () => {
+      dispatch(clearLeagues())
+    }
   }, [])
 
   if (!matches && matches === null) return <Preloader />

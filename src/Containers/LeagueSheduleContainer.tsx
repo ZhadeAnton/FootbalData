@@ -4,8 +4,10 @@ import Preloader from '../Components/Preloader/Preloader'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ILeagueShedule } from '../Interfaces/MatchesIntarfaces'
-import { getMatchesByCompetitionId } from '../Redux/Leagues/LeaguesActionCreators'
 import LeagueShedule from '../Routes/LeagueShedule/LeagueShedule'
+import {
+  clearLeagues,
+  getMatchesByCompetitionId } from '../Redux/Leagues/LeaguesActionCreators'
 
 export interface ILeagueSheduleContainer {
   leagueShedule: ILeagueShedule
@@ -20,6 +22,10 @@ export default function LeagueShuduleContainer() {
 
   useEffect(() => {
     dispatch(getMatchesByCompetitionId(leagueId))
+
+    return () => {
+      dispatch(clearLeagues())
+    }
   }, [])
 
   if (leagueShedule === null) return <Preloader />
