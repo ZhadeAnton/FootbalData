@@ -38,6 +38,13 @@ export default function LeaugePage(props: ILeagueContainer) {
           >
             Sheadule for { props.competition?.name }
           </button>
+
+          <button
+            className='competition__bottom--link'
+            onClick={props.handleClickByTeamButton}
+          >
+            Teams for { props.competition?.name }
+          </button>
         </div>
       </section>
     </main>
