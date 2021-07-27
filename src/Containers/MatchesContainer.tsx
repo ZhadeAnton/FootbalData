@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IMatch } from '../Interfaces/MatchesIntarfaces'
-import { getAllMatches, getMatchById } from '../Redux/Matches/MatchesActionCreators'
+import { getAllMatches } from '../Redux/Matches/MatchesActionCreators'
 import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
 import MatchesPage from '../Routes/MatchesPage/MatchesPage'
@@ -28,7 +28,6 @@ export default function MatchesContainer() {
   }, [])
 
   const handleClickByMatch = (id: number) => {
-    dispatch(getMatchById(id))
     history(`/matches/${id}`)
   }
 

@@ -7,7 +7,6 @@ import { IMatch } from '../../../Interfaces/MatchesIntarfaces'
 import MatchStatus from '../MatchStatus/MatchStatus'
 import MatchDate from '../MatchDate/MatchDate'
 import MatchWinner from '../MatchWinner/MatchWinner'
-// import MatchItem from '../MatchItem/MatchItem'
 
 interface Props {
   matches: Array<IMatch>,

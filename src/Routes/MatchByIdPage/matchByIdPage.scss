@@ -25,12 +25,10 @@
 
     &--tag {
       font-size: var(--font-size-5);
-      color: red;
     }
 
     &--separator {
       font-size: var(--font-size-5);
-      color: red;
     }
   }
 
@@ -42,7 +40,9 @@
   }
 
   &__heading {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
     font-size: var(--font-size-6);
-      font-weight: 600;
+    font-weight: 600;
   }
 }

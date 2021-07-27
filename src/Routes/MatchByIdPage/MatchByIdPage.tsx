@@ -63,8 +63,9 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
         </section>
 
         <Divider />
+
         <h2 className='match-details__heading'>
-        Head2Head statistic
+          Head2Head statistics
         </h2>
 
         <MatchHeadToHead head2head={props.matchInDetails.head2head}/>

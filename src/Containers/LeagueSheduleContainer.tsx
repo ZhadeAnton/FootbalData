@@ -7,7 +7,6 @@ import useHistoryPush from '../Hooks/useHistory'
 import {
   clearLeagues,
   getMatchesByCompetitionId } from '../Redux/Leagues/LeaguesActionCreators'
-import { getMatchById } from '../Redux/Matches/MatchesActionCreators'
 import LeagueShedule from '../Routes/LeagueShedule/LeagueShedule'
 import Preloader from '../Components/Preloader/Preloader'
 
@@ -33,7 +32,6 @@ export default function LeagueShuduleContainer() {
   }, [])
 
   const handleClickByMatch = (id: number) => {
-    dispatch(getMatchById(id))
     history(`/matches/${id}`)
   }
 
