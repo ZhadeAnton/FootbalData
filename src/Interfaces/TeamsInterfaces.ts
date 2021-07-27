@@ -1,4 +1,4 @@
-export interface Iteam {
+export interface ITeam {
   id: number,
   area: {
     id: number,
@@ -16,6 +16,29 @@ export interface Iteam {
   venue: string | null,
   lastUpdated: Date,
   squad: Array<IPlayer>
+}
+
+export interface ITeamByCompetition {
+  competition: {
+    area: {
+      id: number,
+      name: string
+    },
+    code: string,
+    id: number,
+    lastUpdated: Date,
+    name: string,
+    plan: string
+  },
+  filters: {},
+  season: {
+    currentMatchday: number,
+    id: number,
+    endDate: Date,
+    startDate: Date,
+    winner: string | null
+  },
+  teams: Array<ITeam>
 }
 
 export interface IPlayer {
