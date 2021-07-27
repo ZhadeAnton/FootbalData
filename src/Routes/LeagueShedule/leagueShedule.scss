@@ -1,6 +1,8 @@
 @import '../../Scss/variables';
 
 .league-shedule {
+  padding: var(--space-md) 0;
+
   &__header {
     display: flex;
     justify-content: space-between;

@@ -15,3 +15,5 @@ export const getMatchById = (id: number): types.GetMatchById => ({
   type: types.GET_MATCH_BY_ID,
   payload: id
 })
+
+// export const getMatchByIdSuccess

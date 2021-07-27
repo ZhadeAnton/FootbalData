@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Preloader from '../Components/Preloader/Preloader'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ILeagueShedule } from '../Interfaces/MatchesIntarfaces'
-import LeagueShedule from '../Routes/LeagueShedule/LeagueShedule'
+import useHistoryPush from '../Hooks/useHistory'
 import {
   clearLeagues,
   getMatchesByCompetitionId } from '../Redux/Leagues/LeaguesActionCreators'
 import { getMatchById } from '../Redux/Matches/MatchesActionCreators'
+import LeagueShedule from '../Routes/LeagueShedule/LeagueShedule'
+import Preloader from '../Components/Preloader/Preloader'
 
 export interface ILeagueSheduleContainer {
   leagueShedule: ILeagueShedule,
@@ -18,6 +19,7 @@ export interface ILeagueSheduleContainer {
 export default function LeagueShuduleContainer() {
   const dispatch = useAppDispatch()
   const params: any = useParams()
+  const history = useHistoryPush()
 
   const leagueId = params.id
   const leagueShedule = useAppSelector((state) => state.league.leagueShedule)
@@ -32,6 +34,7 @@ export default function LeagueShuduleContainer() {
 
   const handleClickByMatch = (id: number) => {
     dispatch(getMatchById(id))
+    history(`/matches/${id}`)
   }
 
   if (leagueShedule === null) return <Preloader />

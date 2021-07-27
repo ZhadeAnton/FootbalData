@@ -21,7 +21,6 @@ function* getMatchById({payload}) {
     const response = yield call(API.fetchMatchById, payload)
     const match = yield response.data
     yield console.log(match)
-    yield put(actions.getAllMatchesSuccess(matches.matches))
   } catch (error) {
     console.error(error)
   }

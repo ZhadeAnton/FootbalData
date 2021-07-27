@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IMatch } from '../Interfaces/MatchesIntarfaces'
 import { getAllMatches, getMatchById } from '../Redux/Matches/MatchesActionCreators'
 import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
+import useHistoryPush from '../Hooks/useHistory'
 import MatchesPage from '../Routes/MatchesPage/MatchesPage'
 import Preloader from '../Components/Preloader/Preloader'
 
@@ -14,6 +15,7 @@ export interface IMatchesContainer {
 
 export default function MatchesContainer() {
   const dispatch = useAppDispatch()
+  const history = useHistoryPush()
 
   const matches = useAppSelector((state) => state.matches.matches)
 
@@ -27,6 +29,7 @@ export default function MatchesContainer() {
 
   const handleClickByMatch = (id: number) => {
     dispatch(getMatchById(id))
+    history(`/matches/${id}`)
   }
 
   if (!matches && matches === null) return <Preloader />

@@ -17,6 +17,12 @@ export interface GetMatchById {
  payload: number
 }
 
+export const GET_MATCH_BY_ID_SUCCESS = 'GET_MATCH_BY_ID_SUCCESS'
+export interface GetMatchByIdSuccess {
+  type: typeof GET_MATCH_BY_ID_SUCCESS,
+  payload: Array<IMatch>
+}
+
 export type MatchesTypes =
 | GetAllMatches
 | GetAllMatchesSuccess

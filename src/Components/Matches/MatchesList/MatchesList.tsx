@@ -1,8 +1,13 @@
+/* eslint-disable react/display-name */
 import React from 'react'
+import { Table } from 'antd'
 
 import './matchesList.scss'
 import { IMatch } from '../../../Interfaces/MatchesIntarfaces'
-import MatchItem from '../MatchItem/MatchItem'
+import MatchStatus from '../MatchStatus/MatchStatus'
+import MatchDate from '../MatchDate/MatchDate'
+import MatchWinner from '../MatchWinner/MatchWinner'
+// import MatchItem from '../MatchItem/MatchItem'
 
 interface Props {
   matches: Array<IMatch>,
@@ -10,19 +15,109 @@ interface Props {
 }
 
 export default function MatchesList(props: Props) {
-  return (
-    <nav>
-      <ul>
+  const data = []
+  const total = props.matches.length
+
+  for (let i = 0; i < props.matches.length; i++) {
+    data.push({
+      homeTeamScore: props.matches[i].score.fullTime.homeTeam,
+      awayTeamScore: props.matches[i].score.fullTime.awayTeam,
+      winner: props.matches[i].score.winner,
+      utcDate: props.matches[i].utcDate,
+      status: props.matches[i].status,
+      homeTeam: props.matches[i].homeTeam.name,
+      awayTeam: props.matches[i].awayTeam.name
+    })
+  }
+
+  const columns = [
+    {
+      title: 'Date',
+      dataIndex: 'utcDate',
+      width: 70,
+      render: (date: IMatch['utcDate']) => <MatchDate entryDate={date} parseBy='Date' />
+    },
+    {
+      title: 'Time',
+      dataIndex: 'utcDate',
+      width: 60,
+      render: (date: IMatch['utcDate']) => <MatchDate entryDate={date} parseBy='Time' />
+    },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+      width: 70,
+      render: (item: IMatch['status']) => <MatchStatus status={item}/>,
+      filters: [
         {
-          props.matches.map((match) => (
-            <MatchItem
-              key={match.id.toString()}
-              match={match}
-              handleClickByMatch={props.handleClickByMatch}
-            />
-          ))
+          text: 'Finished',
+          value: 'FINISHED',
+        },
+        {
+          text: 'SCHEDULED',
+          value: 'SCHEDULED',
+        },
+      ]
+    },
+    {
+      title: 'Match',
+      children: [
+        {
+          title: 'Home Team',
+          dataIndex: 'homeTeam',
+          key: 'homeTeam',
+          width: 250
+        },
+        {
+          title: 'Away Team',
+          dataIndex: 'awayTeam',
+          key: 'awayTeam',
+          width: 250
         }
-      </ul>
-    </nav>
+      ]
+    },
+    {
+      title: 'Score',
+      children: [
+        {
+          title: 'Home Team',
+          dataIndex: 'homeTeamScore',
+          key: 'homeTeamScore',
+          width: 50
+        },
+        {
+          title: 'Away Team',
+          dataIndex: 'awayTeamScore',
+          key: 'awayTeamScore',
+          width: 50
+        }
+      ]
+    },
+    {
+      title: 'Winner',
+      dataIndex: 'winner',
+      key: 'homeTeamScore',
+      width: 150,
+      render: (winner: IMatch['score']['winner']) => (
+        <MatchWinner winner={winner}
+        />
+      )
+    }
+  ];
+
+  return (
+    <Table
+      columns={columns}
+      dataSource={data}
+      pagination={{
+        pageSize: 10,
+        total,
+        position: ['topRight'],
+        showSizeChanger: false,
+        size: 'small'
+      }}
+      bordered
+      scroll={{ x: 800 }}
+    />
   )
 }
