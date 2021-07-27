@@ -1,4 +1,4 @@
-import { IMatch } from '../../Interfaces/MatchesIntarfaces'
+import { IMatch, IMatchInDetails } from '../../Interfaces/MatchesIntarfaces'
 
 export const GET_ALL_MATHCES = 'GET_ALL_MATHCES'
 export interface GetAllMatches {
@@ -20,10 +20,11 @@ export interface GetMatchById {
 export const GET_MATCH_BY_ID_SUCCESS = 'GET_MATCH_BY_ID_SUCCESS'
 export interface GetMatchByIdSuccess {
   type: typeof GET_MATCH_BY_ID_SUCCESS,
-  payload: Array<IMatch>
+  payload: IMatchInDetails
 }
 
 export type MatchesTypes =
 | GetAllMatches
 | GetAllMatchesSuccess
 | GetMatchById
+| GetMatchByIdSuccess

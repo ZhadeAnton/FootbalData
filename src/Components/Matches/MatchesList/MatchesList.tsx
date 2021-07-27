@@ -20,6 +20,8 @@ export default function MatchesList(props: Props) {
 
   for (let i = 0; i < props.matches.length; i++) {
     data.push({
+      key: i,
+      id: props.matches[i].id,
       homeTeamScore: props.matches[i].score.fullTime.homeTeam,
       awayTeamScore: props.matches[i].score.fullTime.awayTeam,
       winner: props.matches[i].score.winner,
@@ -48,16 +50,6 @@ export default function MatchesList(props: Props) {
       dataIndex: 'status',
       width: 70,
       render: (item: IMatch['status']) => <MatchStatus status={item}/>,
-      filters: [
-        {
-          text: 'Finished',
-          value: 'FINISHED',
-        },
-        {
-          text: 'SCHEDULED',
-          value: 'SCHEDULED',
-        },
-      ]
     },
     {
       title: 'Match',
@@ -65,13 +57,11 @@ export default function MatchesList(props: Props) {
         {
           title: 'Home Team',
           dataIndex: 'homeTeam',
-          key: 'homeTeam',
           width: 250
         },
         {
           title: 'Away Team',
           dataIndex: 'awayTeam',
-          key: 'awayTeam',
           width: 250
         }
       ]
@@ -82,13 +72,11 @@ export default function MatchesList(props: Props) {
         {
           title: 'Home Team',
           dataIndex: 'homeTeamScore',
-          key: 'homeTeamScore',
           width: 50
         },
         {
           title: 'Away Team',
           dataIndex: 'awayTeamScore',
-          key: 'awayTeamScore',
           width: 50
         }
       ]
@@ -96,8 +84,7 @@ export default function MatchesList(props: Props) {
     {
       title: 'Winner',
       dataIndex: 'winner',
-      key: 'homeTeamScore',
-      width: 150,
+      width: 200,
       render: (winner: IMatch['score']['winner']) => (
         <MatchWinner winner={winner}
         />
@@ -118,6 +105,11 @@ export default function MatchesList(props: Props) {
       }}
       bordered
       scroll={{ x: 800 }}
+      onRow={(record) => {
+        return {
+          onClick: () => props.handleClickByMatch(record.id)
+        }
+      }}
     />
   )
 }

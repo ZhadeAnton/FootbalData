@@ -1,14 +1,16 @@
-import { IMatch } from '../../Interfaces/MatchesIntarfaces';
+import { IMatch, IMatchInDetails } from '../../Interfaces/MatchesIntarfaces';
 import { MatchesTypes } from './MatchesActionTypes';
 import * as types from './MatchesActionTypes'
 
 interface IMatchState {
   matches: Array<IMatch> | [],
+  matchInDetails: IMatchInDetails | null,
   isLoading: boolean
 }
 
 const INITIAL_STATE: IMatchState = {
   matches: [],
+  matchInDetails: null,
   isLoading: false
 }
 
@@ -25,6 +27,12 @@ const matchesReducer = (state = INITIAL_STATE, action: MatchesTypes): IMatchStat
         ...state,
         matches: [...action.payload],
         isLoading: false
+      }
+
+    case types.GET_MATCH_BY_ID_SUCCESS:
+      return {
+        ...state,
+        matchInDetails: action.payload
       }
 
     default:

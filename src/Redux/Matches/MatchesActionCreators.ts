@@ -1,4 +1,4 @@
-import { IMatch } from '../../Interfaces/MatchesIntarfaces'
+import { IMatch, IMatchInDetails } from '../../Interfaces/MatchesIntarfaces'
 import * as types from './MatchesActionTypes'
 
 export const getAllMatches = (): types.GetAllMatches => ({
@@ -16,4 +16,8 @@ export const getMatchById = (id: number): types.GetMatchById => ({
   payload: id
 })
 
-// export const getMatchByIdSuccess
+export const getMatchByIdSuccess = (matches: IMatchInDetails)
+  : types.GetMatchByIdSuccess => ({
+  type: types.GET_MATCH_BY_ID_SUCCESS,
+  payload: matches
+})

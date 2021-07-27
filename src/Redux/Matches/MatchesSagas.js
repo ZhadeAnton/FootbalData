@@ -19,8 +19,8 @@ function* getMatchById({payload}) {
   try {
     // Payload is id of a match (getting from clik by item)
     const response = yield call(API.fetchMatchById, payload)
-    const match = yield response.data
-    yield console.log(match)
+    const matchInDetails = yield response.data
+    yield put(actions.getMatchByIdSuccess(matchInDetails))
   } catch (error) {
     console.error(error)
   }

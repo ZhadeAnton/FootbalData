@@ -55,6 +55,24 @@ export interface IMatch {
   }
 }
 
+export interface IMatchInDetails extends IMatch {
+  head2head: {
+    numberOfMatches: number,
+    totalGoals: number,
+    homeTeam: {
+      wins: number,
+      draws: number,
+      losses: number
+    },
+    awayTeam: {
+      wins: number,
+      draws: number,
+      losses: number
+    }
+  },
+  match: IMatch
+}
+
 export interface ILeagueShedule {
   competition: {
     area: {
