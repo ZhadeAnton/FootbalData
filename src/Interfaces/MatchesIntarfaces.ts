@@ -55,19 +55,21 @@ export interface IMatch {
   }
 }
 
-export interface IMatchInDetails extends IMatch {
+export interface IMatchInDetails {
   head2head: {
     numberOfMatches: number,
     totalGoals: number,
     homeTeam: {
       wins: number,
       draws: number,
-      losses: number
+      losses: number,
+      name: string
     },
     awayTeam: {
       wins: number,
       draws: number,
-      losses: number
+      losses: number,
+      name: string
     }
   },
   match: IMatch
