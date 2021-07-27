@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import 'antd/dist/antd.css';
 
 ul, li {
   margin: 0;
@@ -10,6 +11,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-style: normal;
   font-size: initial;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -18,8 +21,6 @@ a {
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -36,6 +37,11 @@ code {
   /* Colors */
   --color-primary: #dd1515;
   --color-dark: #141414;
+  --color-grey: #8c8c8c;
+  --color-lime: #7cb305;
+  --color-red: #ff4d4f;
+  --color-blue: #17A2B8;
+  --color-orange: #ffd591;
   --color-dark-light-1: #1f1f1f;
   --color-dark-light-2: #262626;
   --color-white: #ffffff;

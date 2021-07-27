@@ -1,0 +1,48 @@
+@import '../../Scss/mixins';
+
+.match-details {
+  padding: var(--space-md);
+
+  &__date {
+    font-size: var(--font-size-4);
+    margin-bottom: var(--space-md);
+
+    & > * {
+      margin-right: var(--space-md);
+    }
+  }
+
+  &__status {
+    margin: var(--space-md) 0;
+  }
+
+  &__teams {
+    @include flex-align-center;
+
+    & > * {
+      margin-right: var(--space-md);
+    }
+
+    &--tag {
+      font-size: var(--font-size-5);
+    }
+
+    &--separator {
+      font-size: var(--font-size-5);
+    }
+  }
+
+  &__info {
+    &--title {
+      font-size: var(--font-size-5);
+      font-weight: 600;
+    }
+  }
+
+  &__heading {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-6);
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../../Scss/variables';
+
+.shedule-info {
+  display: block;
+
+  &__title {
+    font-size: var(--font-size-6);
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__title {
+      font-size: var(--font-size-5);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__title {
+      font-size: var(--font-size-4);
+    }
+  }
+}

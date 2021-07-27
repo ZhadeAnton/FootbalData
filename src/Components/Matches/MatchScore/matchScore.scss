@@ -1,0 +1,13 @@
+@import '../../../Scss/mixins';
+
+.match-score {
+  &__info {
+    &--number {
+      font-weight: 600;
+    }
+
+    &--separator {
+      margin: 0 .2rem;
+    }
+  }
+}

@@ -1,32 +1,46 @@
 import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ICompetition } from '../Interfaces/LeaguesInterfaces'
-import { getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
+import { clearLeagues, getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
+import useHistoryPush from '../Hooks/useHistory'
 import LeaguePage from '../Routes/CompetitionPage/CompetitionPage'
+import Preloader from '../Components/Preloader/Preloader'
 
 export interface ILeagueContainer {
-  competition: ICompetition | null
+  competition: ICompetition | null,
+  handleGetShedule: () => void
 }
 
 export default function CompetitionContainer() {
   const dispatch = useAppDispatch()
-  const location = useLocation()
+  const history = useHistoryPush()
+  const params: any = useParams()
 
   // Get league id from location for call getCompetitionById
-  const leagueId = (location.pathname.slice(-4))
+  const leagueId = params.id
+
   const competition = useAppSelector((state) => state.league.competition!)
 
   useEffect(() => {
-    dispatch(getCompetitionById(+leagueId))
+    dispatch(getCompetitionById(leagueId))
+
+    return () => {
+      dispatch(clearLeagues())
+    }
   }, [])
 
-  if (!competition && competition === null) return <div>Loading</div>
+  const handleGetShedule = () => {
+    history(`/leagues/${leagueId}/matches`)
+  }
+
+  if (!competition && competition === null) return <Preloader />
 
   return (
     <LeaguePage
       competition={competition}
+      handleGetShedule={handleGetShedule}
     />
   )
 }

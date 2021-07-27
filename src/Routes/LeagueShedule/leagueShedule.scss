@@ -1,0 +1,26 @@
+@import '../../Scss/variables';
+
+.league-shedule {
+  padding: var(--space-md) 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+
+    & > div {
+      margin-right: var(--space-lg);
+    }
+  }
+  
+  @include media-breakpoint-down(sm) {
+    &__header {
+      flex-wrap: wrap;
+
+      &--shedules-length {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

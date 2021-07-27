@@ -1,23 +1,40 @@
 import { ICompetition, ILeague } from '../../Interfaces/LeaguesInterfaces'
-import * as actions from './LeaguesActionTypes'
+import { ILeagueShedule } from '../../Interfaces/MatchesIntarfaces'
+import * as types from './LeaguesActionTypes'
 
-export const getAllLeagues = (): actions.GetAllLeagues => ({
-  type: actions.GET_ALL_LEAGUES
+export const getAllLeagues = (): types.GetAllLeagues => ({
+  type: types.GET_ALL_LEAGUES
 })
 
 export const getAllLeaguesSuccess = (leagues: Array<ILeague>)
- : actions.GetAllLeaguesSuccess => ({
-  type: actions.GET_ALL_LEAGUES_SUCCESS,
+ : types.GetAllLeaguesSuccess => ({
+  type: types.GET_ALL_LEAGUES_SUCCESS,
   payload: leagues
 })
 
-export const getCompetitionById = (id: ILeague['id']): actions.GetCompetitionById => ({
-  type: actions.GET_COMPETITION_BY_ID,
+export const getCompetitionById = (id: ILeague['id']): types.GetCompetitionById => ({
+  type: types.GET_COMPETITION_BY_ID,
   payload: id
 })
 
 export const getCompetitionByIdSuccess = (competition: ICompetition)
-  : actions.GetCompetitionByIdSuccess => ({
-  type: actions.GET_COMPETITION_BY_ID_SUCCESS,
+  : types.GetCompetitionByIdSuccess => ({
+  type: types.GET_COMPETITION_BY_ID_SUCCESS,
   payload: competition
+})
+
+export const getMatchesByCompetitionId = (id: ICompetition['id'])
+  : types.GetMatchesByCompetitionId => ({
+  type: types.GET_MATCHES_BY_COMPETITION_ID,
+  payload: id
+})
+
+export const getMatchesByCompetitionIdSuccess = (matches: ILeagueShedule)
+  : types.GetMatchesByCompetitionIdSuccess => ({
+  type: types.GET_MATCHES_BY_COMPETITION_ID_SUCCESS,
+  payload: matches
+})
+
+export const clearLeagues = (): types.ClearLeagues => ({
+  type: types.CLEAR_LEAGUES
 })

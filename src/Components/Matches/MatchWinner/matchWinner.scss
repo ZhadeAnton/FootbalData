@@ -1,0 +1,12 @@
+.match-winner {
+  display: inline-block;
+
+  &__draw {
+    color: var(--color-grey);
+  }
+
+  &__title {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}

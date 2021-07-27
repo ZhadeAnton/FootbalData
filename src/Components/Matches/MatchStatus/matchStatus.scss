@@ -1,0 +1,43 @@
+@import '../../../Scss/variables';
+
+.match-status {
+  max-width: 8rem;
+  padding: .2rem .9rem;
+  text-align: center;
+  border-radius: 10rem;
+  background-color: var(--color-grey);
+
+  &__finished {
+    background-color: var(--color-lime);
+  }
+
+  &__postponed,
+  &__canceled,
+  &__suspended,
+  &__paused {
+    background-color: var(--color-red);
+  }
+
+  &__scheduled {
+    background-color: var(--color-blue);
+  }
+
+  &__live,
+  &__in_play {
+    background-color: var(--color-orange);
+  }
+
+  &__title {
+    font-size: var(--font-size-1);
+    font-weight: 600;
+    color: var(--color-white);
+    text-transform: capitalize;
+  }
+
+    @include media-breakpoint-down(lg) {
+      padding: .2rem .8rem;
+      border-radius: 10rem;
+      max-width: 6rem;
+      text-align: center;
+  }
+}

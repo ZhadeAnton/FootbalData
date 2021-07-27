@@ -1,34 +1,17 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 import './competitionPage.scss'
 import { ILeagueContainer } from '../../Containers/CompetitionContainer'
+import CompetitionInfo from '../../Components/Competition/CompetitionInfo/CompetitionInfo'
 
 export default function LeaugePage(props: ILeagueContainer) {
   return (
     <main className='competition'>
       <section className='competition__wrapper container'>
-        <div className='competition__header'>
-          {
-            props.competition?.emblemUrl
-            ?
-              <img
-                className='competition__header--image'
-                src={props.competition?.emblemUrl}
-                alt="Logo"
-              />
-            :
-              <img
-                className='competition__header--image'
-                src='https://i.ibb.co/12hkB1M/image-1.png'
-                alt="UFL"
-              />
-          }
-
-          <h1 className='competition__header--title'>
-            { props.competition?.name }
-          </h1>
-        </div>
+        <CompetitionInfo
+          competitionImage={props.competition?.emblemUrl}
+          competitionName={props.competition?.name}
+        />
 
         <div className='competition__info'>
           <h4 className='competition__info--text'>
@@ -49,12 +32,12 @@ export default function LeaugePage(props: ILeagueContainer) {
         </div>
 
         <div className='competition__bottom'>
-          <NavLink
+          <button
             className='competition__bottom--link'
-            to='/mathes'
+            onClick={props.handleGetShedule}
           >
             Sheadule for { props.competition?.name }
-          </NavLink>
+          </button>
         </div>
       </section>
     </main>

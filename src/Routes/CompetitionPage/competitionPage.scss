@@ -32,6 +32,8 @@
 
   &__bottom {
     padding-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
 
     &--link {
       font-size: var(--font-size-4);
