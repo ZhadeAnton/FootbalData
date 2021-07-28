@@ -6,7 +6,8 @@ import { ITeam } from '../../../Interfaces/TeamsInterfaces'
 import BlankLink from '../WebLink/WebLink'
 
 interface Props {
-  teams: Array<ITeam>
+  teams: Array<ITeam>,
+  handleClickByTeam: (id: number) => void
 }
 
 export default function TeamsList(props: Props) {
@@ -84,6 +85,11 @@ export default function TeamsList(props: Props) {
       bordered
       scroll={{ x: 1100 }}
       sticky
+      onRow={(record) => {
+        return {
+          onClick: () => props.handleClickByTeam(record.id)
+        }
+      }}
     />
   )
 }

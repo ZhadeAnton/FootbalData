@@ -5,11 +5,12 @@ import Preloader from '../Components/Preloader/Preloader'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ITeamByCompetition } from '../Interfaces/TeamsInterfaces'
-import { getTeamByCompetitionId } from '../Redux/Teams/TeamsActionCreators'
+import { getTeamByCompetitionId, getTeamById } from '../Redux/Teams/TeamsActionCreators'
 import LeagueTeamsPage from '../Routes/LeagueTeamsPage/LeagueTeamsPage'
 
 export interface ILeagueTeamContainer {
-  teamByCompetition: ITeamByCompetition | null
+  teamByCompetition: ITeamByCompetition | null,
+  handleClickByTeam: (id: number) => void
 }
 
 export default function LeagueTeamsContainer() {
@@ -24,11 +25,16 @@ export default function LeagueTeamsContainer() {
     dispatch(getTeamByCompetitionId(leagueId))
   }, [])
 
+  const handleClickByTeam = (id: number) => {
+    dispatch(getTeamById(id))
+  }
+
   if (!teamByCompetition) return <Preloader />
 
   return (
     <LeagueTeamsPage
       teamByCompetition={teamByCompetition}
+      handleClickByTeam={handleClickByTeam}
     />
   )
 }

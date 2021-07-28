@@ -11,3 +11,13 @@ export function fetchTeamsByCompetitionId(id: number) {
     }
   })
 }
+
+export function fetchTeamById(id: number) {
+  return axios({
+    method: 'get',
+    url: `https://${BASE_URL}/teams/${id}`,
+    headers: {
+      'X-Auth-Token': API_KEY
+    }
+  })
+}

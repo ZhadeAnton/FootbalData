@@ -9,6 +9,7 @@ import MatchesContainer from './Containers/MatchesContainer';
 import LeagueShuduleContainer from './Containers/LeagueSheduleContainer';
 import MatchByIdContainer from './Containers/MatchByIdContainer';
 import LeagueTeamsContainer from './Containers/LeagueTeamsContainer';
+import TeamContainer from './Containers/TeamContainer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/leagues/:id' component={CompetitionContainer} />
         <Route exact path='/matches' component={MatchesContainer} />
         <Route exact path='/matches/:id' component={MatchByIdContainer} />
+        <Route exact path='/team' component={TeamContainer} />
       </Switch>
     </>
 

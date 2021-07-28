@@ -18,7 +18,10 @@ export default function LeagueTeamsPage(props: ILeagueTeamContainer) {
       </section>
 
       <section>
-        <TeamsList teams={props.teamByCompetition!.teams}/>
+        <TeamsList
+          teams={props.teamByCompetition!.teams}
+          handleClickByTeam={props.handleClickByTeam}
+        />
       </section>
     </main>
   )

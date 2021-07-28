@@ -1,13 +1,16 @@
+import { ITeamById } from './../../Interfaces/TeamsInterfaces';
 import { ITeamByCompetition } from '../../Interfaces/TeamsInterfaces'
 import { TeamsTypes } from './TeamsActionTypes'
 import * as types from './TeamsActionTypes'
 
 interface ITeamState {
-  teamByCompetition: ITeamByCompetition | null
+  teamByCompetition: ITeamByCompetition | null,
+  team: ITeamById | null
 }
 
 const INITIAL_STATE: ITeamState = {
-  teamByCompetition: null
+  teamByCompetition: null,
+  team: null
 }
 
 const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
@@ -16,6 +19,12 @@ const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
       return {
         ...state,
         teamByCompetition: action.payload
+      }
+
+    case types.GET_TEAM_BY_ID_SUCCESS:
+      return {
+        ...state,
+        team: action.payload
       }
 
     default:
