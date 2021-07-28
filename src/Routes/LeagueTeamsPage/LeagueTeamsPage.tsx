@@ -1,7 +1,15 @@
 import React from 'react'
 
-export default function LeagueTeamsPage() {
+import './leagueTeamsPage.scss'
+import { ILeagueTeamContainer } from '../../Containers/LeagueTeamsContainer'
+import TeamsList from '../../Components/Teams/TeamsList/TeamsList'
+
+export default function LeagueTeamsPage(props: ILeagueTeamContainer) {
   return (
-    <main>Hello</main>
+    <main>
+      <section>
+        <TeamsList teams={props.teamByCompetition!.teams}/>
+      </section>
+    </main>
   )
 }

@@ -9,6 +9,7 @@ function* getTeamByCompetitionId({payload}) {
     // Payload is id of a competition
     const response = yield call(API.fetchTeamsByCompetitionId, payload)
     const teambyCompetition = yield response.data
+    yield console.log(teambyCompetition)
     yield put(actions.getTeamByCompetitionIdSuccess(teambyCompetition))
   } catch (error) {
     console.error(error)
