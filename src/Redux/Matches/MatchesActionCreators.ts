@@ -21,3 +21,7 @@ export const getMatchByIdSuccess = (matches: IMatchInDetails)
   type: types.GET_MATCH_BY_ID_SUCCESS,
   payload: matches
 })
+
+export const clearMatches = (): types.ClearMatches => ({
+  type: types.CLEAR_MATCHES
+})

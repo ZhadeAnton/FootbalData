@@ -24,7 +24,7 @@ function App() {
         <Route exact path='/leagues/:id' component={CompetitionContainer} />
         <Route exact path='/matches' component={MatchesContainer} />
         <Route exact path='/matches/:id' component={MatchByIdContainer} />
-        <Route exact path='/team' component={TeamContainer} />
+        <Route exact path='/team/:id' component={TeamContainer} />
       </Switch>
     </>
 

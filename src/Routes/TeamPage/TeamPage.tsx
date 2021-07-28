@@ -7,7 +7,9 @@ export default function TeamPage(props: ITeamContainer) {
   return (
     <main>
       <section>
-        Team
+        <h1>
+          { props.teamById?.name }
+        </h1>
       </section>
     </main>
   )

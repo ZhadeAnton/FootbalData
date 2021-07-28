@@ -20,3 +20,7 @@ export const getTeamByIdSuccess = (teamById: ITeamById): types.GetTeamByIdSucces
   type: types.GET_TEAM_BY_ID_SUCCESS,
   payload: teamById
 })
+
+export const clearTeams = (): types.ClearTeams => ({
+  type: types.CLEAR_TEAMS
+})

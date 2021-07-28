@@ -24,8 +24,14 @@ export interface GetTeamByIdSuccess {
   payload: ITeamById
 }
 
+export const CLEAR_TEAMS = 'CLEAR_TEAMS'
+export interface ClearTeams {
+  type: typeof CLEAR_TEAMS
+}
+
 export type TeamsTypes =
 | GetTeamByCompetitionId
 | GetTeamByCompetitionIdSuccess
 | GetTeamById
 | GetTeamByIdSuccess
+| ClearTeams
