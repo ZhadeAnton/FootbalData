@@ -7,7 +7,7 @@ import useHistoryPush from '../Hooks/useHistory'
 import {
   clearLeagues,
   getMatchesByCompetitionId } from '../Redux/Leagues/LeaguesActionCreators'
-import LeagueShedule from '../Routes/LeagueShedule/LeagueShedule'
+import LeagueShedulePage from '../Routes/LeagueShedulePage/LeagueShedulePage'
 import Preloader from '../Components/Preloader/Preloader'
 
 export interface ILeagueSheduleContainer {
@@ -38,7 +38,7 @@ export default function LeagueShuduleContainer() {
   if (leagueShedule === null) return <Preloader />
 
   return (
-    <LeagueShedule
+    <LeagueShedulePage
       leagueShedule={leagueShedule}
       handleClickByMatch={handleClickByMatch}
     />

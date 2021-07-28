@@ -56,7 +56,7 @@ export default function MatchesList(props: Props) {
         {
           title: 'Home Team',
           dataIndex: 'homeTeam',
-          width: 250
+          width: 250,
         },
         {
           title: 'Away Team',

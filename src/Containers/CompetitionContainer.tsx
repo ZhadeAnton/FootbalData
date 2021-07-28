@@ -10,7 +10,8 @@ import Preloader from '../Components/Preloader/Preloader'
 
 export interface ILeagueContainer {
   competition: ICompetition | null,
-  handleGetShedule: () => void
+  handleGetShedule: () => void,
+  handleClickByTeamButton: () => void
 }
 
 export default function CompetitionContainer() {
@@ -35,12 +36,17 @@ export default function CompetitionContainer() {
     history(`/leagues/${leagueId}/matches`)
   }
 
+  const handleClickByTeamButton = () => {
+    history(`/leagues/${leagueId}/teams`)
+  }
+
   if (!competition && competition === null) return <Preloader />
 
   return (
     <LeaguePage
       competition={competition}
       handleGetShedule={handleGetShedule}
+      handleClickByTeamButton={handleClickByTeamButton}
     />
   )
 }

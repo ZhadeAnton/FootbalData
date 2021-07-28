@@ -1,12 +1,12 @@
 import React from 'react'
 
-import './leagueShedule.scss'
+import './leagueShedulePage.scss'
 import { ILeagueSheduleContainer } from '../../Containers/LeagueSheduleContainer'
 import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
 import SheduleLength from '../../Components/Sheadule/SheduleLength/SheduleLength'
 import SheaduleInfo from '../../Components/Sheadule/SheaduleInfo/SheaduleInfo'
 
-export default function LeagueShedule(props: ILeagueSheduleContainer) {
+export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
   return (
     <main className='league-shedule'>
       <section className='league-shedule__wrapper container'>
