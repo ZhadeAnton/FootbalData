@@ -1,7 +1,9 @@
+/* eslint-disable react/display-name */
 import React from 'react'
 import { Table } from 'antd'
 
 import { ITeam } from '../../../Interfaces/TeamsInterfaces'
+import BlankLink from '../WebLink/WebLink'
 
 interface Props {
   teams: Array<ITeam>
@@ -31,15 +33,9 @@ export default function TeamsList(props: Props) {
     {
       title: 'Name',
       dataIndex: 'name',
-      width: 100,
+      width: 90,
       key: 'name',
-      fixed: true,
-    },
-    {
-      title: 'Shot Name',
-      dataIndex: 'shortName',
-      key: 'shortName',
-      width: 100,
+      fixed: true
     },
     {
       title: 'Founded',
@@ -51,13 +47,14 @@ export default function TeamsList(props: Props) {
       title: 'Phone',
       dataIndex: 'phone',
       key: 'phone',
-      width: 70,
+      width: 70
     },
     {
       title: 'Website',
       dataIndex: 'website',
       key: 'website',
       width: 100,
+      render: (link: ITeam['website']) => <BlankLink link={link}/>
     },
     {
       title: 'Email',
@@ -69,8 +66,7 @@ export default function TeamsList(props: Props) {
       title: 'TLA',
       dataIndex: 'tla',
       width: 70,
-      key: 'tla',
-      fixed: true
+      key: 'tla'
     },
   ]
 
