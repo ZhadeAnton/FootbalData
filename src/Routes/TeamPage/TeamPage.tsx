@@ -22,14 +22,16 @@ export default function TeamPage(props: ITeamContainer) {
 
   return (
     <main className='team-page'>
-      <section className='container'>
+      <section className='team-page__wrapper container'>
         <CompetitionHeader
           competitionImage={props.teamById?.crestUrl}
           competitionName={props.teamById?.name}
           competitionVenue={props.teamById?.venue}
         />
 
-        <TeamShirts clubColors={props.teamById!.clubColors}/>
+        <div className='team-page__shirts'>
+          <TeamShirts clubColors={props.teamById!.clubColors}/>
+        </div>
 
         <Divider />
 

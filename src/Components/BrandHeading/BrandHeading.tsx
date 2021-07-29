@@ -3,7 +3,7 @@ import React from 'react'
 import './brandHeading.scss'
 
 interface Props {
-  children: string
+  children: string | undefined
 }
 
 export default function BrandHeading(props: Props) {

@@ -1,4 +1,6 @@
 import React from 'react'
+import BrandDescription from '../../Containers/BrandDescription/BrandDescription'
+import BrandHeading from '../BrandHeading/BrandHeading'
 
 import './competitionHeader.scss'
 
@@ -15,11 +17,11 @@ export default function CompetitionHeader(props: Props) {
         {
           props.competitionImage
           ?
-          <img
-            className='competition-info__image-wrapper--image'
-            src={ props.competitionImage }
-            alt={ props.competitionName }
-          />
+            <img
+              className='competition-info__image-wrapper--image'
+              src={ props.competitionImage }
+              alt={ props.competitionName }
+            />
         :
           <img
             className='competition__header--image'
@@ -30,14 +32,14 @@ export default function CompetitionHeader(props: Props) {
       </div>
 
       <div className='competition-info__content'>
-        <h1 className='competition-info__content--name'>
+        <BrandHeading>
           { props.competitionName }
-        </h1>
+        </BrandHeading>
 
         { props.competitionVenue &&
-        <h3 className='competition-info__content--venue'>
+        <BrandDescription>
           { props.competitionVenue }
-        </h3>
+        </BrandDescription>
         }
       </div>
     </section>

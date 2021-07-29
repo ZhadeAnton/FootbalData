@@ -1,11 +1,12 @@
 @import '../../Scss/mixins';
+@import '../../Scss/variables';
 
 .competition-info {
   @include flex-align-center;
 
   &__image-wrapper {
     &--image {
-      width: 11rem;
+      width: 15rem;
       height: auto;
     }
   }
@@ -22,6 +23,29 @@
   
     &--venue {
       font-size: var(--font-size-4);
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__image-wrapper {
+      &--image {
+        width: 13rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    text-align: center;
+
+    &__image-wrapper {
+      &--image {
+        width: 11rem;
+      }
+    }
+
+    &__content {
+      margin: 1rem 0;
     }
   }
 }

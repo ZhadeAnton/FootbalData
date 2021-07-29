@@ -1,9 +1,21 @@
+@import '../../Scss/variables';
+
 .brand-heading {
   display: block;
-  text-align: center;
-  font-size: var(--font-size-8);
+  font-size: var(--font-size-7);
   font-family: var(--typography-secondary);
   font-weight: 600;
   text-transform: uppercase;
-  margin: 3rem 0;
+
+  @include media-breakpoint-down(lg) {
+    font-size: var(--font-size-6);
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: var(--font-size-5);
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: var(--font-size-4);
+  }
 }

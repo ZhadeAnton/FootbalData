@@ -1,3 +1,5 @@
+@import '../../Scss/variables';
+
 .team-shirts {
 
   &__list {
@@ -5,11 +7,21 @@
 
     &--item {
       margin-right: 1rem;
+      background-color: var(--color-white-light-4);
+      border-radius: 50%;
+      padding: .5rem;
     }
   }
 
   svg {
     width: 3rem;
     height: 3rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }
