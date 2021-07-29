@@ -18,7 +18,9 @@ export default function DescriptionList(props: Props) {
             <Descriptions.Item
               key={idx}
               label={Object.keys(item)}>
-              {Object.values(item)}
+              <span style={{wordBreak: 'initial'}}>
+                {Object.values(item)}
+              </span>
             </Descriptions.Item>
           )
         })
