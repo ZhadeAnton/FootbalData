@@ -1,10 +1,13 @@
 import React from 'react'
+import { Divider } from 'antd'
 
 import './competitionPage.scss'
 import { ILeagueContainer } from '../../Containers/CompetitionContainer'
 import CompetitionHeader
   from '../../Components/CompetitionHeader/CompetitionHeader'
 import DescriptionList from '../../Components/TeamInfoList/DescriptionList'
+import BrandTitle from '../../Components/BrandTitle/BrandTitle'
+import BrandButton from '../../Components/BrandButton/BrandButton'
 
 export default function LeaugePage(props: ILeagueContainer) {
   const competitionData = [
@@ -24,25 +27,25 @@ export default function LeaugePage(props: ILeagueContainer) {
           competitionName={props.competition?.name}
         />
 
+        <Divider />
+
+        <BrandTitle style={{marginBottom: 1 + 'rem'}}>
+          {`Info for ${props.competition?.name}`}
+        </BrandTitle>
         <DescriptionList
           data={competitionData}
-          descTitle={`Info for ${props.competition?.name}`}
         />
 
-        <div className='competition__bottom'>
-          <button
-            className='competition__bottom--link'
-            onClick={props.handleGetShedule}
-          >
-            Sheadule for { props.competition?.name }
-          </button>
+        <Divider />
 
-          <button
-            className='competition__bottom--link'
-            onClick={props.handleClickByTeamButton}
-          >
+        <div className='competition__bottom'>
+          <BrandButton onClick={props.handleGetShedule}>
+            Shedule for { props.competition?.name }
+          </BrandButton>
+
+          <BrandButton onClick={props.handleClickByTeamButton}>
             Teams for { props.competition?.name }
-          </button>
+          </BrandButton>
         </div>
       </section>
     </main>
