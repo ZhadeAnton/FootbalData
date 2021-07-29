@@ -2,11 +2,10 @@
 import React from 'react'
 import { Table } from 'antd'
 
-import { ITeam } from '../../../Interfaces/TeamInterfaces'
-import BlankLink from '../WebLink/WebLink'
+import { ITeamWithImage } from '../../../Interfaces/TeamInterfaces'
 
 interface Props {
-  teams: Array<ITeam>,
+  teams: Array<ITeamWithImage>,
   handleClickByTeam: (id: number) => void
 }
 
@@ -17,64 +16,61 @@ export default function TeamsList(props: Props) {
   for (let i = 0; i < props.teams.length; i++) {
     data.push({
       key: i,
+      crestUrl: <img
+        src={props.teams[i].crestUrl}
+        alt="Logo"
+        width={60}
+        height={60}
+      />,
       id: props.teams[i].id,
       areaName: props.teams[i].area.name,
       name: props.teams[i].name,
       shortName: props.teams[i].shortName,
-      addres: props.teams[i].address,
-      phone: props.teams[i].phone,
       founded: props.teams[i].founded,
-      website: props.teams[i].website,
-      email: props.teams[i].email,
+      venue: props.teams[i].venue,
       tla: props.teams[i].tla
     })
   }
 
   const columns = [
     {
+      title: 'Logo',
+      dataIndex: 'crestUrl',
+      width: 10,
+      fixed: true,
+    },
+    {
       title: 'Name',
       dataIndex: 'name',
-      width: 90,
-      key: 'name',
-      fixed: true
+      width: 20
     },
     {
-      title: 'Founded',
-      dataIndex: 'founded',
-      key: 'founded',
-      width: 70,
-    },
-    {
-      title: 'Phone',
-      dataIndex: 'phone',
-      key: 'phone',
-      width: 70
-    },
-    {
-      title: 'Website',
-      dataIndex: 'website',
-      key: 'website',
-      width: 100,
-      render: (link: ITeam['website']) => <BlankLink link={link}/>
-    },
-    {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-      width: 100,
+      title: 'Short Name',
+      dataIndex: 'shortName',
+      width: 20,
     },
     {
       title: 'TLA',
       dataIndex: 'tla',
-      width: 70,
-      key: 'tla'
+      width: 10,
     },
+    {
+      title: 'Venue',
+      dataIndex: 'venue',
+      width: 50,
+    },
+    {
+      title: 'founded',
+      dataIndex: 'founded',
+      width: 10,
+    }
   ]
 
   return (
     <Table
       columns={columns}
       dataSource={data}
+      style={{cursor: 'pointer'}}
       pagination={{
         pageSize: 10,
         total,

@@ -18,6 +18,10 @@ export interface ITeam {
   squad: Array<IPlayer>
 }
 
+export interface ITeamWithImage extends ITeam {
+  crestUrl: string,
+}
+
 export interface ITeamByCompetition {
   competition: {
     area: {
@@ -38,7 +42,7 @@ export interface ITeamByCompetition {
     startDate: Date,
     winner: string | null
   },
-  teams: Array<ITeam>
+  teams: Array<ITeamWithImage>
 }
 
 export interface ITeamById {

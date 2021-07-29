@@ -5,11 +5,13 @@ import { ReactComponent as Shirt } from '../../Assets/SVG/football-shirt.svg'
 import { ITeamById } from '../../Interfaces/TeamInterfaces'
 
 interface Props {
-  clubColors: ITeamById['clubColors']
+  clubColors: ITeamById['clubColors'] | null
 }
 
 export default function TeamShirts(props: Props) {
-  const teamColors = Array.from(props.clubColors.split('/'))
+  if (props.clubColors === null) return null
+
+  const teamColors = Array.from(props.clubColors!.split('/'))
 
   return (
     <div className='team-shirts'>
