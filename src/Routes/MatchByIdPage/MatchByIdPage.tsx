@@ -6,7 +6,7 @@ import { IMatchInDetailsContainer } from '../../Containers/MatchByIdContainer'
 import MatchHeadToHead from '../../Components/Matches/MatchHeadToHead/MatchHeadToHead'
 import MatchDate from '../../Components/Matches/MatchDate/MatchDate'
 import MatchStatus from '../../Components/Matches/MatchStatus/MatchStatus'
-import CompetitionInfo from '../../Components/Competition/CompetitionInfo/CompetitionInfo'
+import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHeader'
 
 export default function MatchByIdPage(props: IMatchInDetailsContainer) {
   return (
@@ -24,7 +24,7 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
           />
         </div>
 
-        <CompetitionInfo
+        <CompetitionHeader
           competitionImage={props.matchInDetails.match.competition.area.ensignUrl}
           competitionName={props.matchInDetails.match.competition.area.name}
           competitionVenue={props.matchInDetails.match.venue}

@@ -32,7 +32,7 @@ export default function MatchesContainer() {
     history(`/matches/${id}`)
   }
 
-  if (!matches && matches === null) return <Preloader />
+  if (matches === null) return <Preloader />
 
   return (
     <MatchesPage

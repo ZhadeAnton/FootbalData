@@ -2,13 +2,14 @@ import React from 'react'
 
 import './competitionPage.scss'
 import { ILeagueContainer } from '../../Containers/CompetitionContainer'
-import CompetitionInfo from '../../Components/Competition/CompetitionInfo/CompetitionInfo'
+import CompetitionHeader
+  from '../../Components/CompetitionHeader/CompetitionHeader'
 
 export default function LeaugePage(props: ILeagueContainer) {
   return (
     <main className='competition'>
       <section className='competition__wrapper container'>
-        <CompetitionInfo
+        <CompetitionHeader
           competitionImage={props.competition?.emblemUrl}
           competitionName={props.competition?.name}
         />

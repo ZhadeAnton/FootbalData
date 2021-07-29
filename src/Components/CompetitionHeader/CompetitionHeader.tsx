@@ -1,14 +1,14 @@
 import React from 'react'
 
-import './competitionInfo.scss'
+import './competitionHeader.scss'
 
 interface Props {
   competitionImage: string | null | undefined,
   competitionName: string | undefined,
-  competitionVenue?: string
+  competitionVenue?: string | null | undefined
 }
 
-export default function CompetitionInfo(props: Props) {
+export default function CompetitionHeader(props: Props) {
   return (
     <section className='competition-info'>
       <div className='competition-info__image-wrapper'>
