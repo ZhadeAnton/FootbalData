@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { ICompetition } from '../Interfaces/LeaguesInterfaces'
+import { ICompetition } from '../Interfaces/LeagueInterfaces'
 import { clearLeagues, getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
 import LeaguePage from '../Routes/CompetitionPage/CompetitionPage'

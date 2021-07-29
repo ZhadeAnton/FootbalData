@@ -1,4 +1,4 @@
-import { ITeamByCompetition, ITeamById } from '../../Interfaces/TeamsInterfaces'
+import { ITeamByCompetition, ITeamById } from '../../Interfaces/TeamInterfaces'
 
 export const GET_TEAM_BY_COMPETITION_ID = 'GET_TEAM_BY_COMPETITION_ID'
 export interface GetTeamByCompetitionId {

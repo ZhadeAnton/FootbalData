@@ -1,4 +1,4 @@
-import { IMatch, IMatchInDetails } from '../../Interfaces/MatchesIntarfaces'
+import { IMatch, IMatchInDetails } from '../../Interfaces/MatchIntarfaces'
 import * as types from './MatchesActionTypes'
 
 export const getAllMatches = (): types.GetAllMatches => ({

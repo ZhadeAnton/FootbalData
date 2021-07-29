@@ -1,5 +1,5 @@
-import { ITeamById } from './../../Interfaces/TeamsInterfaces';
-import { ITeamByCompetition } from '../../Interfaces/TeamsInterfaces'
+import { ITeamById } from '../../Interfaces/TeamInterfaces';
+import { ITeamByCompetition } from '../../Interfaces/TeamInterfaces'
 import { TeamsTypes } from './TeamsActionTypes'
 import * as types from './TeamsActionTypes'
 

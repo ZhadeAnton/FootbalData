@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider } from 'antd'
 
 import './leaguesItem.scss'
-import { IFnGetCompetitionById, ILeague } from '../../../Interfaces/LeaguesInterfaces'
+import { IFnGetCompetitionById, ILeague } from '../../../Interfaces/LeagueInterfaces'
 
 interface Props {
   league: ILeague,
@@ -26,7 +26,8 @@ export default function LeaugesItem(props: Props) {
         :
           <img
             className='leagues-item__logo'
-            src='https://cdn4.sportngin.com/attachments/photo/3f93-130044635/EDP.png'
+            // eslint-disable-next-line max-len
+            src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/LaLiga_Santander_%282%29.svg/220px-LaLiga_Santander_%282%29.svg.png'
             alt="UFL"
           />
       }

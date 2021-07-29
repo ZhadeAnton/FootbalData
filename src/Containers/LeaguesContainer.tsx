@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import useHistoryPush from '../Hooks/useHistory'
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { IFnGetCompetitionById, ILeague } from '../Interfaces/LeaguesInterfaces'
+import { IFnGetCompetitionById, ILeague } from '../Interfaces/LeagueInterfaces'
 import {
   clearLeagues,
   getAllLeagues,

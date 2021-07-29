@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './leaguesList.scss'
-import { IFnGetCompetitionById, ILeague } from '../../../Interfaces/LeaguesInterfaces'
+import { IFnGetCompetitionById, ILeague } from '../../../Interfaces/LeagueInterfaces'
 import LeaugesItem from '../LeaguesItem/LeaguesItem'
 
 interface Props {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table } from 'antd';
 
-import { IMatchInDetails } from '../../../Interfaces/MatchesIntarfaces';
+import { IMatchInDetails } from '../../../Interfaces/MatchIntarfaces';
 
 interface Props {
   head2head: IMatchInDetails['head2head']
@@ -17,7 +17,8 @@ export default function MatchHeadToHead(props: Props) {
     {
       title: 'Name',
       dataIndex: 'name',
-      width: 300,
+      width: 100,
+      fixed: true
     },
     {
       title: 'Wins',

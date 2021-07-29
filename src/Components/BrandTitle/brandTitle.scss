@@ -1,0 +1,17 @@
+@import '../../Scss/variables';
+
+.brand-title {
+  display: block;
+  font-size: var(--font-size-5);
+  font-family: var(--typography-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(lg) {
+    font-size: var(--font-size-4);
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: var(--font-size-3);
+  }
+}

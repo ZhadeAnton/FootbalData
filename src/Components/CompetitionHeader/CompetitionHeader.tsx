@@ -7,7 +7,7 @@ import BrandHeading from '../BrandHeading/BrandHeading'
 import './competitionHeader.scss'
 
 interface Props {
-  competitionImage: string | null | undefined,
+  competitionImage?: string | null | undefined,
   competitionName: string | undefined,
   competitionVenue?: string | null | undefined
 }
@@ -27,7 +27,8 @@ export default function CompetitionHeader(props: Props) {
         :
           <Image
             className='competition__header--image'
-            src='https://i.ibb.co/12hkB1M/image-1.png'
+            // eslint-disable-next-line max-len
+            src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/LaLiga_Santander_%282%29.svg/220px-LaLiga_Santander_%282%29.svg.png'
             alt="UFL"
           />
         }

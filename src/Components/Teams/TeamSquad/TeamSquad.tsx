@@ -2,7 +2,7 @@ import React from 'react'
 import { Table } from 'antd'
 import moment from 'moment'
 
-import { ITeamById } from '../../../Interfaces/TeamsInterfaces'
+import { ITeamById } from '../../../Interfaces/TeamInterfaces'
 
 interface Props {
   squad: ITeamById['squad']

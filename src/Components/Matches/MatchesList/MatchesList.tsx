@@ -3,10 +3,10 @@ import React from 'react'
 import { Table } from 'antd'
 
 import './matchesList.scss'
-import { IMatch } from '../../../Interfaces/MatchesIntarfaces'
+import { IMatch } from '../../../Interfaces/MatchIntarfaces'
 import MatchStatus from '../MatchStatus/MatchStatus'
 import MatchDate from '../MatchDate/MatchDate'
-import MatchWinner from '../MatchWinner/MatchWinner'
+import { getWinner } from '../../../Utils/MatchUtils'
 
 interface Props {
   matches: Array<IMatch>,
@@ -18,12 +18,17 @@ export default function MatchesList(props: Props) {
   const total = props.matches.length
 
   for (let i = 0; i < props.matches.length; i++) {
+    const winner = getWinner(
+        props.matches[i].score.winner,
+        props.matches[i].awayTeam.name,
+        props.matches[i].homeTeam.name)
+
     data.push({
       key: i,
       id: props.matches[i].id,
       homeTeamScore: props.matches[i].score.fullTime.homeTeam,
       awayTeamScore: props.matches[i].score.fullTime.awayTeam,
-      winner: props.matches[i].score.winner,
+      winner,
       utcDate: props.matches[i].utcDate,
       status: props.matches[i].status,
       homeTeam: props.matches[i].homeTeam.name,
@@ -83,11 +88,7 @@ export default function MatchesList(props: Props) {
     {
       title: 'Winner',
       dataIndex: 'winner',
-      width: 200,
-      render: (winner: IMatch['score']['winner']) => (
-        <MatchWinner winner={winner}
-        />
-      )
+      width: 200
     }
   ];
 
@@ -95,6 +96,7 @@ export default function MatchesList(props: Props) {
     <Table
       columns={columns}
       dataSource={data}
+      style={{cursor: 'pointer'}}
       pagination={{
         pageSize: 10,
         total,

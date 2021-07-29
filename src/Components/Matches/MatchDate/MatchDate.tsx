@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-import { IMatch } from '../../../Interfaces/MatchesIntarfaces'
+import { IMatch } from '../../../Interfaces/MatchIntarfaces'
 
 interface Props {
   entryDate: IMatch['utcDate']

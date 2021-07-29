@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import Preloader from '../Components/Preloader/Preloader'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { ITeamByCompetition } from '../Interfaces/TeamsInterfaces'
+import { ITeamByCompetition } from '../Interfaces/TeamInterfaces'
 import { getTeamByCompetitionId } from '../Redux/Teams/TeamsActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
 import LeagueTeamsPage from '../Routes/LeagueTeamsPage/LeagueTeamsPage'

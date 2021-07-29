@@ -4,26 +4,60 @@ import { Divider } from 'antd'
 import './matchByIdPage.scss'
 import { IMatchInDetailsContainer } from '../../Containers/MatchByIdContainer'
 import MatchHeadToHead from '../../Components/Matches/MatchHeadToHead/MatchHeadToHead'
-import MatchDate from '../../Components/Matches/MatchDate/MatchDate'
 import MatchStatus from '../../Components/Matches/MatchStatus/MatchStatus'
 import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHeader'
+import DescriptionList from '../../Components/TeamInfoList/DescriptionList'
+import MatchDate from '../../Components/Matches/MatchDate/MatchDate'
+import BrandTitle from '../../Components/BrandTitle/BrandTitle'
+import { getMatchScore, getWinner, parseFromCaps } from '../../Utils/MatchUtils'
 
 export default function MatchByIdPage(props: IMatchInDetailsContainer) {
+  const date = <MatchDate
+    entryDate={props.matchInDetails.match.utcDate}
+    parseBy='Date'
+  />
+
+  const seasonStart = <MatchDate
+    entryDate={props.matchInDetails.match.season.startDate}
+    parseBy='Date'
+  />
+
+  const seasonEnd = <MatchDate
+    entryDate={props.matchInDetails.match.season.endDate}
+    parseBy='Date'
+  />
+
+  const winner = getWinner(
+      props.matchInDetails.match.score.winner,
+      props.matchInDetails.match.awayTeam.name,
+      props.matchInDetails.match.homeTeam.name)
+
+  const duration = parseFromCaps(props.matchInDetails.match.score.duration)
+
+  const halfTime = getMatchScore(
+      props.matchInDetails.match.score.halfTime.awayTeam,
+      props.matchInDetails.match.score.halfTime.homeTeam)
+
+  const fullTime = getMatchScore(
+      props.matchInDetails.match.score.fullTime.awayTeam,
+      props.matchInDetails.match.score.fullTime.homeTeam)
+
+  const matchData = [
+    {['Date']: date},
+    {['Match Day']: props.matchInDetails.match.season.currentMatchday},
+    {['Groupe']: props.matchInDetails.match.group},
+    {['Winner']: winner},
+    {['Duration']: duration},
+    {['Half Time']: halfTime},
+    {['Full Time']: fullTime},
+    {['Season started']: seasonStart},
+    {['Season will end']: seasonEnd},
+    {['Attendance']: props.matchInDetails.match.attendance},
+  ]
+
   return (
     <main className='match-details'>
       <section className='container'>
-        <div className='match-details__date'>
-          <MatchDate
-            entryDate={props.matchInDetails.match.utcDate}
-            parseBy='Date'
-          />
-
-          <MatchDate
-            entryDate={props.matchInDetails.match.utcDate}
-            parseBy='Time'
-          />
-        </div>
-
         <CompetitionHeader
           competitionImage={props.matchInDetails.match.competition.area.ensignUrl}
           competitionName={props.matchInDetails.match.competition.area.name}
@@ -34,41 +68,21 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
           <MatchStatus status={props.matchInDetails.match.status}/>
         </div>
 
-        <div className='match-details__teams'>
-          <h3 className='match-details__teams--tag'>
-            {props.matchInDetails.head2head.awayTeam.name}
-          </h3>
+        <Divider />
 
-          <span className='match-details__teams--separator'>
-            :
-          </span>
+        <BrandTitle style={{marginBottom: 1 + 'rem'}}>
+          Details of match
+        </BrandTitle>
 
-          <h3 className='match-details__teams--tag'>
-            {props.matchInDetails.head2head.homeTeam.name}
-          </h3>
-        </div>
+        <DescriptionList data={matchData} />
 
         <Divider />
 
-        <section className='match-details__info'>
-          <h3 className='match-details__info--title'>
-            Total matches: &nbsp;
-            {props.matchInDetails.head2head.numberOfMatches}
-          </h3>
+        <BrandTitle style={{marginBottom: 1 + 'rem'}}>
+          Head2Head statistic
+        </BrandTitle>
 
-          <h3 className='match-details__info--title'>
-            Total goals: &nbsp;
-            {props.matchInDetails.head2head.totalGoals}
-          </h3>
-        </section>
-
-        <Divider />
-
-        <h2 className='match-details__heading'>
-          Head2Head statistics
-        </h2>
-
-        <MatchHeadToHead head2head={props.matchInDetails.head2head}/>
+        <MatchHeadToHead head2head={props.matchInDetails.head2head} />
       </section>
     </main>
   )

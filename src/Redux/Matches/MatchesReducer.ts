@@ -1,4 +1,4 @@
-import { IMatch, IMatchInDetails } from '../../Interfaces/MatchesIntarfaces';
+import { IMatch, IMatchInDetails } from '../../Interfaces/MatchIntarfaces';
 import { MatchesTypes } from './MatchesActionTypes';
 import * as types from './MatchesActionTypes'
 

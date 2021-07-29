@@ -1,7 +1,9 @@
 @import '../../Scss/mixins';
+@import '../../Scss/variables';
 
 .competition {
  @include full-size;
+ padding: var(--space-lg) 0;
 
   &__header {
     @include flex-align-center;
@@ -34,12 +36,19 @@
     padding-top: var(--space-md);
     display: flex;
     flex-direction: column;
+    max-width: 20rem;
 
-    &--link {
-      font-size: var(--font-size-4);
-      font-weight: 600;
+    & > * {
       margin-bottom: 1rem;
-      color: var(--color-dark);
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
     }
+  }
+  
+  @include media-breakpoint-down(md) {
+    padding: var(--space-md) 0;
   }
 }
