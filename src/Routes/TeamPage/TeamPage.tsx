@@ -6,6 +6,8 @@ import { ITeamContainer } from '../../Containers/TeamContainer'
 import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHeader'
 import DescriptionList from '../../Components/TeamInfoList/DescriptionList'
 import TeamShirts from '../../Components/TeamShirts/TeamShirts'
+import TeamSquad from '../../Components/Teams/TeamSquad/TeamSquad'
+import BrandHeading from '../../Components/BrandHeading/BrandHeading'
 
 export default function TeamPage(props: ITeamContainer) {
   const teamData = [
@@ -35,10 +37,19 @@ export default function TeamPage(props: ITeamContainer) {
 
         <Divider />
 
+        <BrandHeading style={{marginBottom: 1 + 'rem'}}>
+          {`Info for ${props.teamById?.name}`}
+        </BrandHeading>
         <DescriptionList
           data={teamData}
-          descTitle={`Info for ${props.teamById?.name}`}
         />
+
+        <Divider />
+
+        <BrandHeading>
+          Squad
+        </BrandHeading>
+        <TeamSquad squad={props.teamById!.squad}/>
       </section>
     </main>
   )

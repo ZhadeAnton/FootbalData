@@ -1,9 +1,0 @@
-@import '../../Scss/mixins';
-
-.statistic-block {
-  @include flex-align-center;
-
-  &__separator {
-    margin: 0 1rem;
-  }
-}
