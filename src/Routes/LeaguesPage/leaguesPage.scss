@@ -2,6 +2,7 @@
 
 .leagues {
   padding: var(--space-xl) 0;
+  text-align: center;
 
   @include media-breakpoint-down(md) {
     padding: var(--space-lg) 0;

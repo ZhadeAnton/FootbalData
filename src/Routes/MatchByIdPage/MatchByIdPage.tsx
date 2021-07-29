@@ -4,7 +4,6 @@ import { Divider } from 'antd'
 import './matchByIdPage.scss'
 import { IMatchInDetailsContainer } from '../../Containers/MatchByIdContainer'
 import MatchHeadToHead from '../../Components/Matches/MatchHeadToHead/MatchHeadToHead'
-import MatchDate from '../../Components/Matches/MatchDate/MatchDate'
 import MatchStatus from '../../Components/Matches/MatchStatus/MatchStatus'
 import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHeader'
 
@@ -12,18 +11,6 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
   return (
     <main className='match-details'>
       <section className='container'>
-        <div className='match-details__date'>
-          <MatchDate
-            entryDate={props.matchInDetails.match.utcDate}
-            parseBy='Date'
-          />
-
-          <MatchDate
-            entryDate={props.matchInDetails.match.utcDate}
-            parseBy='Time'
-          />
-        </div>
-
         <CompetitionHeader
           competitionImage={props.matchInDetails.match.competition.area.ensignUrl}
           competitionName={props.matchInDetails.match.competition.area.name}
@@ -68,7 +55,7 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
           Head2Head statistics
         </h2>
 
-        <MatchHeadToHead head2head={props.matchInDetails.head2head}/>
+        <MatchHeadToHead head2head={props.matchInDetails.head2head} />
       </section>
     </main>
   )

@@ -3,15 +3,6 @@
 .match-details {
   padding: var(--space-md);
 
-  &__date {
-    font-size: var(--font-size-4);
-    margin-bottom: var(--space-md);
-
-    & > * {
-      margin-right: var(--space-md);
-    }
-  }
-
   &__status {
     margin: var(--space-md) 0;
   }

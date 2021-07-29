@@ -25,6 +25,7 @@ export default function LeaugePage(props: ILeagueContainer) {
         <CompetitionHeader
           competitionImage={props.competition?.emblemUrl}
           competitionName={props.competition?.name}
+          competitionVenue={props.competition?.area.name}
         />
 
         <Divider />

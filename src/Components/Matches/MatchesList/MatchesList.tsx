@@ -84,10 +84,7 @@ export default function MatchesList(props: Props) {
       title: 'Winner',
       dataIndex: 'winner',
       width: 200,
-      render: (winner: IMatch['score']['winner']) => (
-        <MatchWinner winner={winner}
-        />
-      )
+      render: (winner: IMatch['score']['winner']) => <MatchWinner winner={winner} />
     }
   ];
 

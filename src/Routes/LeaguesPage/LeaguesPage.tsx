@@ -9,7 +9,9 @@ export default function LeaguesPage(props: ILeaguesContainer) {
   return (
     <main className='leagues'>
       <section className='leagues__wrapper container'>
-        <BrandHeading>List of available leagues</BrandHeading>
+        <BrandHeading style={{marginBottom: 2 + 'rem'}}>
+          List of available leagues
+        </BrandHeading>
 
         <LeaguesList
           leagues={props.leagues}
