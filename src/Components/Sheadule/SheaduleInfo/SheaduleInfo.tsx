@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './sheaduleInfo.scss'
-import { ICompetition } from '../../../Interfaces/LeaguesInterfaces'
+import { ICompetition } from '../../../Interfaces/LeagueInterfaces'
 
 interface Props {
   competitionName: ICompetition['name'],

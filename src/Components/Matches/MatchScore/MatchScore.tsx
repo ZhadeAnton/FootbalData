@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './matchScore.scss'
-import { IMatch } from '../../../Interfaces/MatchesIntarfaces'
+import { IMatch } from '../../../Interfaces/MatchIntarfaces'
 
 interface Props {
   score: IMatch['score']

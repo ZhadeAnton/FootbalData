@@ -2,7 +2,7 @@ import React from 'react'
 
 import './teamShirt.scss'
 import { ReactComponent as Shirt } from '../../Assets/SVG/football-shirt.svg'
-import { ITeamById } from '../../Interfaces/TeamsInterfaces'
+import { ITeamById } from '../../Interfaces/TeamInterfaces'
 
 interface Props {
   clubColors: ITeamById['clubColors']

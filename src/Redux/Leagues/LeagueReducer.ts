@@ -1,7 +1,7 @@
 import { LeaguesTypes } from './LeaguesActionTypes'
 import * as types from './LeaguesActionTypes'
-import { ICompetition, ILeague } from '../../Interfaces/LeaguesInterfaces'
-import { ILeagueShedule } from '../../Interfaces/MatchesIntarfaces'
+import { ICompetition, ILeague } from '../../Interfaces/LeagueInterfaces'
+import { ILeagueShedule } from '../../Interfaces/MatchIntarfaces'
 
 interface ILeaguesState {
   leagues: Array<ILeague> | [],

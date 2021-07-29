@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider } from 'antd'
 
 import './leaguesItem.scss'
-import { IFnGetCompetitionById, ILeague } from '../../../Interfaces/LeaguesInterfaces'
+import { IFnGetCompetitionById, ILeague } from '../../../Interfaces/LeagueInterfaces'
 
 interface Props {
   league: ILeague,

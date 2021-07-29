@@ -2,7 +2,7 @@
 import React from 'react'
 import { Table } from 'antd'
 
-import { ITeam } from '../../../Interfaces/TeamsInterfaces'
+import { ITeam } from '../../../Interfaces/TeamInterfaces'
 import BlankLink from '../WebLink/WebLink'
 
 interface Props {

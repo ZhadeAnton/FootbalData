@@ -1,5 +1,5 @@
 export function getMatchScore(awayTeamScore: number, homeTeamScore: number): string {
-  if (awayTeamScore || homeTeamScore === null) return ''
+  if (awayTeamScore === null || homeTeamScore === null) return ''
 
   return (
     `${awayTeamScore} : ${homeTeamScore}`
@@ -11,5 +11,9 @@ export function parseFromCaps(entryString: string): string {
 }
 
 export function getWinner(winner: string, awayTeam: string, homeTeam: string): string {
-  return winner === 'AWAY_TEAM' ? awayTeam : homeTeam
+  return winner === 'DRAW'
+  ? parseFromCaps(winner)
+  : winner === 'AWAY_TEAM'
+  ? awayTeam
+  : homeTeam
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { ILeagueShedule } from '../Interfaces/MatchesIntarfaces'
+import { ILeagueShedule } from '../Interfaces/MatchIntarfaces'
 import useHistoryPush from '../Hooks/useHistory'
 import {
   clearLeagues,

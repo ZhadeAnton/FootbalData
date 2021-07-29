@@ -1,5 +1,5 @@
-import { ICompetition, ILeague } from '../../Interfaces/LeaguesInterfaces'
-import { ILeagueShedule } from '../../Interfaces/MatchesIntarfaces'
+import { ICompetition, ILeague } from '../../Interfaces/LeagueInterfaces'
+import { ILeagueShedule } from '../../Interfaces/MatchIntarfaces'
 
 export const GET_ALL_LEAGUES = 'GET_ALL_LEAGUES'
 export interface GetAllLeagues {

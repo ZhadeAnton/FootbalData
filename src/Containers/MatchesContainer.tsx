@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { IMatch } from '../Interfaces/MatchesIntarfaces'
+import { IMatch } from '../Interfaces/MatchIntarfaces'
 import { clearMatches, getAllMatches } from '../Redux/Matches/MatchesActionCreators'
 import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
 import useHistoryPush from '../Hooks/useHistory'

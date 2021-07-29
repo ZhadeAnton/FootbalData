@@ -1,4 +1,4 @@
-import { IMatch, IMatchInDetails } from '../../Interfaces/MatchesIntarfaces'
+import { IMatch, IMatchInDetails } from '../../Interfaces/MatchIntarfaces'
 
 export const GET_ALL_MATHCES = 'GET_ALL_MATHCES'
 export interface GetAllMatches {

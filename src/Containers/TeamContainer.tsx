@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { ITeamById } from '../Interfaces/TeamsInterfaces'
+import { ITeamById } from '../Interfaces/TeamInterfaces'
 import { useParams } from 'react-router-dom'
 import { getTeamById } from '../Redux/Teams/TeamsActionCreators'
 import TeamPage from '../Routes/TeamPage/TeamPage'

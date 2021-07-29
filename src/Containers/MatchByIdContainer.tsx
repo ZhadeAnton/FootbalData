@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
-import { IMatchInDetails } from '../Interfaces/MatchesIntarfaces'
+import { IMatchInDetails } from '../Interfaces/MatchIntarfaces'
 import { clearMatches, getMatchById } from '../Redux/Matches/MatchesActionCreators'
 import MatchByIdPage from '../Routes/MatchByIdPage/MatchByIdPage'
 import Preloader from '../Components/Preloader/Preloader'
