@@ -12,7 +12,6 @@ import BrandTitle from '../../Components/BrandTitle/BrandTitle'
 
 export default function TeamPage(props: ITeamContainer) {
   const teamData = [
-    {['Competiton name']: props.teamById?.name},
     {['Short name']: props.teamById?.shortName},
     {['TLA']: props.teamById?.tla},
     {['Founded']: props.teamById?.founded},

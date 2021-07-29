@@ -11,6 +11,7 @@ export default function DescriptionList(props: Props) {
     <Descriptions
       title={props.descTitle}
       bordered
+      size='small'
     >
       {
         props.data.map((item, idx) => {

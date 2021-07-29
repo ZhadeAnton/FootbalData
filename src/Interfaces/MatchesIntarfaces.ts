@@ -39,7 +39,7 @@ export interface IMatch {
   utcDate: Date,
   status: string,
   minute: null | string,
-  attendance: number,
+  attendance: number | null,
   venue: string,
   matchday: Date | null,
   stage: string,

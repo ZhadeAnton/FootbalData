@@ -17,7 +17,8 @@ export default function MatchHeadToHead(props: Props) {
     {
       title: 'Name',
       dataIndex: 'name',
-      width: 300,
+      width: 100,
+      fixed: true
     },
     {
       title: 'Wins',
