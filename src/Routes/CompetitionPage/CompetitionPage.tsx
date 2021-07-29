@@ -2,34 +2,32 @@ import React from 'react'
 
 import './competitionPage.scss'
 import { ILeagueContainer } from '../../Containers/CompetitionContainer'
-import CompetitionInfo from '../../Components/Competition/CompetitionInfo/CompetitionInfo'
+import CompetitionHeader
+  from '../../Components/CompetitionHeader/CompetitionHeader'
+import DescriptionList from '../../Components/TeamInfoList/DescriptionList'
 
 export default function LeaugePage(props: ILeagueContainer) {
+  const competitionData = [
+    {['Competiton name']: props.competition?.name},
+    {['Area Name']: props.competition?.area.name},
+    {['Current season started']: props.competition?.currentSeason.startDate},
+    {['Current season will end']: props.competition?.currentSeason.endDate},
+    {['Match day']: props.competition?.currentSeason.currentMatchday},
+    {['Passed seasons']: props.competition?.seasons.length},
+  ]
+
   return (
     <main className='competition'>
       <section className='competition__wrapper container'>
-        <CompetitionInfo
+        <CompetitionHeader
           competitionImage={props.competition?.emblemUrl}
           competitionName={props.competition?.name}
         />
 
-        <div className='competition__info'>
-          <h4 className='competition__info--text'>
-            Location: { props.competition?.area.name }
-          </h4>
-
-          <h4 className='competition__info--text'>
-            Current seasone started by { props.competition?.currentSeason?.startDate }
-          </h4>
-
-          <h4 className='competition__info--text'>
-            Current seasone end by { props.competition?.currentSeason?.endDate }
-          </h4>
-
-          <h4 className='competition__info--text'>
-            League alreade passed { props.competition?.seasons.length } seasons
-          </h4>
-        </div>
+        <DescriptionList
+          data={competitionData}
+          descTitle={`Info for ${props.competition?.name}`}
+        />
 
         <div className='competition__bottom'>
           <button

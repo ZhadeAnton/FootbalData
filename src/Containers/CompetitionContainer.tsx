@@ -40,7 +40,7 @@ export default function CompetitionContainer() {
     history(`/leagues/${leagueId}/teams`)
   }
 
-  if (!competition && competition === null) return <Preloader />
+  if (competition === null) return <Preloader />
 
   return (
     <LeaguePage

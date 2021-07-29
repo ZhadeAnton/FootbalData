@@ -1,0 +1,32 @@
+@import '../../Scss/variables';
+
+.team-page {
+  padding: var(--space-lg) 0;
+
+  &__shirts {
+    padding: var(--space-lg) 0;
+  }
+
+  &__form-row {
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: var(--space-md) 0;
+
+    &__shirts {
+      padding: var(--space-md) 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__shirts {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-sm) 0;
+    }
+  }
+}

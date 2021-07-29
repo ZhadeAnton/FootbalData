@@ -9,6 +9,7 @@ function* getAllMatches() {
     const response = yield call(API.fetchAllMatches)
     // const matches represent object {filters: {...}, matches: {...}}
     const matches = yield response.data
+    yield console.log(matches)
     yield put(actions.getAllMatchesSuccess(matches.matches))
   } catch (error) {
     console.error(error)

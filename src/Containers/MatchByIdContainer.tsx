@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IMatchInDetails } from '../Interfaces/MatchesIntarfaces'
-import { getMatchById } from '../Redux/Matches/MatchesActionCreators'
+import { clearMatches, getMatchById } from '../Redux/Matches/MatchesActionCreators'
 import MatchByIdPage from '../Routes/MatchByIdPage/MatchByIdPage'
 import Preloader from '../Components/Preloader/Preloader'
 
@@ -21,6 +21,10 @@ export default function MatchByIdContainer() {
 
   useEffect(() => {
     dispatch(getMatchById(matchId))
+
+    return () => {
+      dispatch(clearMatches())
+    }
   }, [])
 
   if (matchInDetails === null && !matchInDetails) return <Preloader />

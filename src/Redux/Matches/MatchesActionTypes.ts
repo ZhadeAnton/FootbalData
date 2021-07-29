@@ -23,8 +23,14 @@ export interface GetMatchByIdSuccess {
   payload: IMatchInDetails
 }
 
+export const CLEAR_MATCHES = 'CLEAR_MATCHES'
+export interface ClearMatches {
+  type: typeof CLEAR_MATCHES
+}
+
 export type MatchesTypes =
 | GetAllMatches
 | GetAllMatchesSuccess
 | GetMatchById
 | GetMatchByIdSuccess
+| ClearMatches

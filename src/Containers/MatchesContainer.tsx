@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { IMatch } from '../Interfaces/MatchesIntarfaces'
-import { getAllMatches } from '../Redux/Matches/MatchesActionCreators'
+import { clearMatches, getAllMatches } from '../Redux/Matches/MatchesActionCreators'
 import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
 import MatchesPage from '../Routes/MatchesPage/MatchesPage'
@@ -24,6 +24,7 @@ export default function MatchesContainer() {
 
     return () => {
       dispatch(clearLeagues())
+      dispatch(clearMatches())
     }
   }, [])
 
@@ -31,7 +32,7 @@ export default function MatchesContainer() {
     history(`/matches/${id}`)
   }
 
-  if (!matches && matches === null) return <Preloader />
+  if (matches === null) return <Preloader />
 
   return (
     <MatchesPage
