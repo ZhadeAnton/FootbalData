@@ -8,6 +8,7 @@ import DescriptionList from '../../Components/TeamInfoList/DescriptionList'
 import TeamShirts from '../../Components/TeamShirts/TeamShirts'
 import TeamSquad from '../../Components/Teams/TeamSquad/TeamSquad'
 import BrandHeading from '../../Components/BrandHeading/BrandHeading'
+import BackTopButton from '../../Components/Custom/BackButton/BackButton';
 
 export default function TeamPage(props: ITeamContainer) {
   const teamData = [
@@ -46,10 +47,10 @@ export default function TeamPage(props: ITeamContainer) {
 
         <Divider />
 
-        <BrandHeading>
-          Squad
-        </BrandHeading>
+        <BrandHeading>Squad</BrandHeading>
         <TeamSquad squad={props.teamById!.squad}/>
+
+        <BackTopButton />
       </section>
     </main>
   )

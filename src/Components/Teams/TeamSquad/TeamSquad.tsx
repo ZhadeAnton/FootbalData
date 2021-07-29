@@ -47,7 +47,7 @@ export default function TeamSquad(props: Props) {
       width: 70
     },
     {
-      title: 'dateOfBirth',
+      title: 'Date of birth',
       dataIndex: 'dateOfBirth',
       width: 70
     },

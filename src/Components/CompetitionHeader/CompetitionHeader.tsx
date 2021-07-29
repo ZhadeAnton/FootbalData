@@ -1,4 +1,6 @@
 import React from 'react'
+import { Image } from 'antd';
+
 import BrandDescription from '../../Containers/BrandDescription/BrandDescription'
 import BrandHeading from '../BrandHeading/BrandHeading'
 
@@ -17,13 +19,13 @@ export default function CompetitionHeader(props: Props) {
         {
           props.competitionImage
           ?
-            <img
+            <Image
               className='competition-info__image-wrapper--image'
               src={ props.competitionImage }
               alt={ props.competitionName }
             />
         :
-          <img
+          <Image
             className='competition__header--image'
             src='https://i.ibb.co/12hkB1M/image-1.png'
             alt="UFL"
