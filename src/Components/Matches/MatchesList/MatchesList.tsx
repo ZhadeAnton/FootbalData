@@ -96,6 +96,7 @@ export default function MatchesList(props: Props) {
     <Table
       columns={columns}
       dataSource={data}
+      style={{cursor: 'pointer'}}
       pagination={{
         pageSize: 10,
         total,
