@@ -1,11 +1,11 @@
 import React from 'react'
-import { Divider, DatePicker } from 'antd'
-const { RangePicker } = DatePicker
+import { Divider } from 'antd'
 
 import './leagueShedulePage.scss'
 import { ILeagueSheduleContainer } from '../../Containers/LeagueSheduleContainer'
 import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
 import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHeader'
+import DateFilter from '../../Components/DateFilter/DateFilter'
 
 export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
   return (
@@ -18,30 +18,15 @@ export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
 
         <Divider />
 
-        <DatePicker
-          picker="year"
-          allowClear={false}
-          onChange={(_, dateString: string) => props.handleYearChange(dateString)}
+        <DateFilter
+          date={props.date}
+          year={props.year}
+          handleDateChange={props.handleDateChange}
+          handleYearChange={props.handleYearChange}
+          handleClearFiltering={props.handleClearFiltering}
         />
 
-        <RangePicker
-          // eslint-disable-next-line max-len
-          onChange={(_, dateString: [string, string]) => props.handleDateChange(dateString)}
-          allowClear={false}
-        />
-
-        { props.date &&
-          <time>Filter by range: { props.date }</time>
-        }
-
-        { props.year &&
-          <time>Filter by year: { props.year }</time>
-        }
-
-        { props.date &&
-          <button onClick={props.handleClearFiltering}>Clear filter</button>
-        }
-
+        <Divider />
 
         <MatchesList
           matches={props.leagueShedule.matches}
