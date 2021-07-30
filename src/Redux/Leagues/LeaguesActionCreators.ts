@@ -47,6 +47,18 @@ export const getCompetitionMatchesByYearSuccess = (matches: ILeagueShedule)
   payload: matches
 })
 
+export const getCompMatchesByDateRange = (id: number,
+    date: [string, string]): types.GetCompMatchesByDateRange => ({
+  type: types.GET_COMP_MATCHES_BY_DATE_RANGE,
+  payload: { id, date }
+})
+
+export const getCompMatchesByDateRangeSuccess = (mathces: ILeagueShedule)
+  : types.GetCompMatchesByDateRangeSuccess => ({
+  type: types.GET_COMP_MATCHES_BY_DATE_RANGE_SUCCESS,
+  payload: mathces
+})
+
 export const clearLeagues = (): types.ClearLeagues => ({
   type: types.CLEAR_LEAGUES
 })
