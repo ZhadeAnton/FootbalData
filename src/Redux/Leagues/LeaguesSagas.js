@@ -36,6 +36,16 @@ function* getCompetitionMatches({payload}) {
   }
 }
 
+function* getCompetitionMatchesByYear({payload: { id, year }}) {
+  try {
+    const response = yield call(API.fetchCompetitionMatchesByYear, id, year)
+    const sheduleObject = yield response.data
+    yield put(actions.getCompetitionMatchesByYearSuccess(sheduleObject))
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 function* onGetAllLeagues() {
   yield takeLatest(types.GET_ALL_LEAGUES, getAllLeagues)
 }
@@ -48,10 +58,15 @@ function* onGetCompetitionMatches() {
   yield takeLatest(types.GET_MATCHES_BY_COMPETITION_ID, getCompetitionMatches)
 }
 
+function* onGetCompetitionMatchesByYear() {
+  yield takeLatest(types.GET_COMPETITION_MATCHES_BY_YEAR, getCompetitionMatchesByYear)
+}
+
 export default function* leaguesSagas() {
   yield all([
     call(onGetAllLeagues),
     call(onGetCompetitionById),
-    call(onGetCompetitionMatches)
+    call(onGetCompetitionMatches),
+    call(onGetCompetitionMatchesByYear)
   ])
 }

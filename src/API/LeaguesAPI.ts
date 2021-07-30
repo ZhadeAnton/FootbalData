@@ -31,3 +31,13 @@ export function fetchAllMatchesByCompetitionId(id: number) {
     }
   })
 }
+
+export function fetchCompetitionMatchesByYear(id: number, year: string) {
+  return axios({
+    method: 'get',
+    url: `https://${BASE_URL}/competitions/${id}/matches/?season=${year}`,
+    headers: {
+      'X-Auth-Token': API_KEY
+    }
+  })
+}

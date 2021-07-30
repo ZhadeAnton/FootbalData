@@ -1,4 +1,6 @@
 import React from 'react'
+import { DatePicker, Divider } from 'antd'
+import moment from 'moment'
 
 import './leagueShedulePage.scss'
 import { ILeagueSheduleContainer } from '../../Containers/LeagueSheduleContainer'
@@ -12,6 +14,15 @@ export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
         <CompetitionHeader
           competitionName={props.leagueShedule.competition.area.name}
           competitionVenue={props.leagueShedule.competition.name}
+        />
+
+        <Divider />
+
+        <DatePicker
+          onChange={(_, dateString: any) => props.handleDateChange(dateString)}
+          picker="year"
+          allowClear
+          value={moment(props.year)}
         />
 
         <MatchesList

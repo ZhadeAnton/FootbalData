@@ -41,6 +41,7 @@ const leaguesReducer = (state = INITIAL_STATE, action: LeaguesTypes): ILeaguesSt
       }
 
     case types.GET_MATCHES_BY_COMPETITION_ID_SUCCESS:
+    case types.GET_COMP_MATCHES_BY_YEAR_SUCCESS:
       return {
         ...state,
         leagueShedule: action.payload
