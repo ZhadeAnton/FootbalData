@@ -43,7 +43,7 @@ export function fetchCompetitionMatchesByYear(id: number, year: string) {
   })
 }
 
-export function fetchCompetitionMatchesDateRange(id: number, range: string) {
+export function fetchCompetitionMatchesDateRange(id: number, range: [string, string]) {
   // Range it`s an array from DatePicker. Example: ['2020-01-01, '2020-02-02']
   return axios({
     method: 'get',

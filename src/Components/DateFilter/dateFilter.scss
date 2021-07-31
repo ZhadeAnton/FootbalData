@@ -17,13 +17,11 @@
   }
 
   &__info {
+    width: 100%;
     @include flex-align-center;
-    justify-content: space-between;
-    flex-wrap: wrap;
 
     &--title {
       min-width: 17.5rem;
-      display: flex;
       margin-right: 1rem;
       font-weight: 600;
       font-size: var(--font-size-2);
@@ -37,6 +35,8 @@
 
   @include media-breakpoint-down(lg) {
     &__info {
+      flex-wrap: wrap;
+
       &--title {
         font-size: var(--font-size-1);
       }

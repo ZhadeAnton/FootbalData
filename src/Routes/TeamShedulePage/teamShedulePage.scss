@@ -1,0 +1,10 @@
+.team-shedule-page {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+
+  &__date-filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

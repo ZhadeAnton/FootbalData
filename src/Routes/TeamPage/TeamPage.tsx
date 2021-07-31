@@ -53,7 +53,9 @@ export default function TeamPage(props: ITeamContainer) {
 
         <Divider />
 
-        <BrandTitle>Squad</BrandTitle>
+        <BrandTitle>
+          Squad
+        </BrandTitle>
         <TeamSquad squad={props.teamById!.squad} />
 
         <BackTopButton />

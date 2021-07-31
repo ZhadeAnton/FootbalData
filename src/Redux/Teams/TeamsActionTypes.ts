@@ -37,6 +37,19 @@ export interface GetTeamSheduleSuccess {
   payload: ITeamShedule
 }
 
+export const GET_TEAM_MATCHES_BY_DATE_RANGE = 'GET_TEAM_MATCHES_BY_DATE_RANGE'
+export interface GetTeamMatchesByDateRange {
+  type: typeof GET_TEAM_MATCHES_BY_DATE_RANGE,
+  payload: { id: number, date: [string, string] }
+}
+
+export const GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS =
+'GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS'
+export interface GetTeamMatchesByDateRangeSuccess {
+  type: typeof GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS,
+  payload: ITeamShedule
+}
+
 export const CLEAR_TEAMS = 'CLEAR_TEAMS'
 export interface ClearTeams {
   type: typeof CLEAR_TEAMS
@@ -49,4 +62,6 @@ export type TeamsTypes =
 | GetTeamByIdSuccess
 | GetTeamShedule
 | GetTeamSheduleSuccess
+| GetTeamMatchesByDateRange
+| GetTeamMatchesByDateRangeSuccess
 | ClearTeams

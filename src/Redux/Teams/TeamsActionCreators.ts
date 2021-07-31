@@ -33,6 +33,18 @@ export const getTeamSheduleSuccess = (teamShedule: ITeamShedule)
   payload: teamShedule
 })
 
+export const getTeamMatchesByDateRange = (id: number, date: [string, string])
+  : types.GetTeamMatchesByDateRange => ({
+  type: types.GET_TEAM_MATCHES_BY_DATE_RANGE,
+  payload: { id, date }
+})
+
+export const getTeamMatchesByDateRangeSuccess = (teamShedule: ITeamShedule)
+  : types.GetTeamMatchesByDateRangeSuccess => ({
+  type: types.GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS,
+  payload: teamShedule
+})
+
 export const clearTeams = (): types.ClearTeams => ({
   type: types.CLEAR_TEAMS
 })

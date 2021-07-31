@@ -23,6 +23,12 @@ const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
         teamByCompetition: action.payload
       }
 
+    case types.GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS:
+      return {
+        ...state,
+        teamShedule: action.payload
+      }
+
     case types.GET_TEAM_BY_ID_SUCCESS:
       return {
         ...state,
