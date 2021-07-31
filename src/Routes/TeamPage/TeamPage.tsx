@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider } from 'antd'
+import { Button, Divider } from 'antd'
 
 import './teamPage.scss'
 import { ITeamContainer } from '../../Containers/TeamContainer'
@@ -35,6 +35,13 @@ export default function TeamPage(props: ITeamContainer) {
           <TeamShirts clubColors={props.teamById!.clubColors}/>
         </div>
 
+        <Button
+          type='primary'
+          onClick={props.handleClickByShedule}
+        >
+          Shedule for {props.teamById?.name}
+        </Button>
+
         <Divider />
 
         <BrandTitle style={{marginBottom: 1 + 'rem'}}>
@@ -46,7 +53,9 @@ export default function TeamPage(props: ITeamContainer) {
 
         <Divider />
 
-        <BrandTitle>Squad</BrandTitle>
+        <BrandTitle>
+          Squad
+        </BrandTitle>
         <TeamSquad squad={props.teamById!.squad} />
 
         <BackTopButton />

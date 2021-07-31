@@ -57,7 +57,7 @@ export default function TeamsList(props: Props) {
     {
       title: 'Venue',
       dataIndex: 'venue',
-      width: 50,
+      width: 30,
     },
     {
       title: 'founded',
@@ -79,7 +79,7 @@ export default function TeamsList(props: Props) {
         size: 'small'
       }}
       bordered
-      scroll={{ x: 1100 }}
+      scroll={{ x: 900 }}
       sticky
       onRow={(record) => {
         return {

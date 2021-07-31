@@ -1,4 +1,5 @@
-import { ITeamByCompetition, ITeamById } from '../../Interfaces/TeamInterfaces'
+import {
+  ITeamByCompetition, ITeamById, ITeamShedule } from '../../Interfaces/TeamInterfaces'
 
 export const GET_TEAM_BY_COMPETITION_ID = 'GET_TEAM_BY_COMPETITION_ID'
 export interface GetTeamByCompetitionId {
@@ -24,6 +25,31 @@ export interface GetTeamByIdSuccess {
   payload: ITeamById
 }
 
+export const GET_TEAM_SHEDULE = 'GET_TEAM_SHEDULE'
+export interface GetTeamShedule {
+  type: typeof GET_TEAM_SHEDULE,
+  payload: number
+}
+
+export const GET_TEAM_SHEDULE_SUCCESS = 'GET_TEAM_SHEDULE_SUCCESS'
+export interface GetTeamSheduleSuccess {
+  type: typeof GET_TEAM_SHEDULE_SUCCESS,
+  payload: ITeamShedule
+}
+
+export const GET_TEAM_MATCHES_BY_DATE_RANGE = 'GET_TEAM_MATCHES_BY_DATE_RANGE'
+export interface GetTeamMatchesByDateRange {
+  type: typeof GET_TEAM_MATCHES_BY_DATE_RANGE,
+  payload: { id: number, date: [string, string] }
+}
+
+export const GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS =
+'GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS'
+export interface GetTeamMatchesByDateRangeSuccess {
+  type: typeof GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS,
+  payload: ITeamShedule
+}
+
 export const CLEAR_TEAMS = 'CLEAR_TEAMS'
 export interface ClearTeams {
   type: typeof CLEAR_TEAMS
@@ -34,4 +60,8 @@ export type TeamsTypes =
 | GetTeamByCompetitionIdSuccess
 | GetTeamById
 | GetTeamByIdSuccess
+| GetTeamShedule
+| GetTeamSheduleSuccess
+| GetTeamMatchesByDateRange
+| GetTeamMatchesByDateRangeSuccess
 | ClearTeams

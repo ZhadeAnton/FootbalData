@@ -1,0 +1,39 @@
+@import '../../../Scss/mixins';
+@import '../../../Scss/variables';
+
+.match-item {
+  @include flex-align-center;
+
+  &__title {
+    font-family: var(--typography-primary);
+    font-size: var(--font-size-4);
+    font-weight: 600;
+  }
+
+  &__separator {
+    margin: 0 1rem;
+    font-family: var(--typography-primary);
+    font-size: var(--font-size-4);
+    font-weight: 600;
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__title {
+      font-size: var(--font-size-3);
+    }
+
+    &__separator {
+      font-size: var(--font-size-3);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__title {
+      font-size: var(--font-size-2);
+    }
+
+    &__separator {
+      font-size: var(--font-size-2);
+    }
+  }
+}

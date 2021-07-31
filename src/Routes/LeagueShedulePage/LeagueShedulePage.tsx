@@ -1,9 +1,11 @@
 import React from 'react'
+import { Divider } from 'antd'
 
 import './leagueShedulePage.scss'
 import { ILeagueSheduleContainer } from '../../Containers/LeagueSheduleContainer'
 import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
 import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHeader'
+import DateFilter from '../../Components/DateFilter/DateFilter'
 
 export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
   return (
@@ -13,6 +15,18 @@ export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
           competitionName={props.leagueShedule.competition.area.name}
           competitionVenue={props.leagueShedule.competition.name}
         />
+
+        <Divider />
+
+        <DateFilter
+          date={props.date}
+          year={props.year}
+          handleDateChange={props.handleDateChange}
+          handleYearChange={props.handleYearChange}
+          handleClearFiltering={props.handleClearFiltering}
+        />
+
+        <Divider />
 
         <MatchesList
           matches={props.leagueShedule.matches}

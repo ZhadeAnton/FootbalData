@@ -37,6 +37,31 @@ export interface GetMatchesByCompetitionIdSuccess {
   payload: ILeagueShedule
 }
 
+export const GET_COMPETITION_MATCHES_BY_YEAR = 'GET_COMPETITION_MATCHES_BY_YEAR'
+export interface GetCompetitionMatchesByYear {
+  type: typeof GET_COMPETITION_MATCHES_BY_YEAR,
+  payload: { id: number, year: string }
+}
+
+export const GET_COMP_MATCHES_BY_YEAR_SUCCESS = 'GET_COMP_MATCHES_BY_YEAR_SUCCESS'
+export interface GetCompetitionMatchesByYearSucess {
+  type: typeof GET_COMP_MATCHES_BY_YEAR_SUCCESS,
+  payload: ILeagueShedule
+}
+
+export const GET_COMP_MATCHES_BY_DATE_RANGE = 'GET_COMP_MATCHES_BY_DATE_RANGE'
+export interface GetCompMatchesByDateRange {
+  type: typeof GET_COMP_MATCHES_BY_DATE_RANGE,
+  payload: { id: number, date: [string, string] }
+}
+
+export const GET_COMP_MATCHES_BY_DATE_RANGE_SUCCESS =
+'GET_COMP_MATCHES_BY_DATE_RANGE_SUCCESS'
+export interface GetCompMatchesByDateRangeSuccess {
+  type: typeof GET_COMP_MATCHES_BY_DATE_RANGE_SUCCESS,
+  payload: ILeagueShedule
+}
+
 export const CLEAR_LEAGUES = 'CLEAR_LEAGUES'
 export interface ClearLeagues {
   type: typeof CLEAR_LEAGUES
@@ -49,4 +74,8 @@ export type LeaguesTypes =
 | GetCompetitionByIdSuccess
 | GetMatchesByCompetitionId
 | GetMatchesByCompetitionIdSuccess
+| GetCompetitionMatchesByYear
+| GetCompetitionMatchesByYearSucess
+| GetCompMatchesByDateRange
+| GetCompMatchesByDateRangeSuccess
 | ClearLeagues

@@ -22,6 +22,18 @@ export const getMatchByIdSuccess = (matches: IMatchInDetails)
   payload: matches
 })
 
+export const getMatchesByDateRange = (date: [string, string])
+  : types.GetMatchesByDateRange => ({
+  type: types.GET_MATCHES_BY_DATE_RANGE,
+  payload: date
+})
+
+export const getMatchesByDateRangeSuccess = (matches: Array<IMatch>)
+  : types.GetMatchesByDateRangeSuccess => ({
+  type: types.GET_MATCHES_BY_DATE_RANGE_SUCCESS,
+  payload: matches
+})
+
 export const clearMatches = (): types.ClearMatches => ({
   type: types.CLEAR_MATCHES
 })

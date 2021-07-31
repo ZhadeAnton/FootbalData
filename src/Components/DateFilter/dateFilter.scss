@@ -1,0 +1,45 @@
+@import '../../Scss/variables';
+@import '../../Scss/mixins';
+
+.date-filter {
+  @include flex-align-center;
+  flex-wrap: wrap;
+
+  &__pickers {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 21.875rem;
+    padding: .3rem 0;
+
+    & > * {
+      margin: .3rem;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    @include flex-align-center;
+
+    &--title {
+      min-width: 17.5rem;
+      margin-right: 1rem;
+      font-weight: 600;
+      font-size: var(--font-size-2);
+      font-family: var(--typography-secondary);
+    }
+  }
+  
+  &__button {
+    margin: .7rem 0;
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__info {
+      flex-wrap: wrap;
+
+      &--title {
+        font-size: var(--font-size-1);
+      }
+    }
+  }
+}

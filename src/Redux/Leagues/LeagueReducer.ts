@@ -6,32 +6,21 @@ import { ILeagueShedule } from '../../Interfaces/MatchIntarfaces'
 interface ILeaguesState {
   leagues: Array<ILeague> | [],
   competition: ICompetition | null,
-  leagueShedule: ILeagueShedule | null,
-  isLoading: boolean
+  leagueShedule: ILeagueShedule | null
 }
 
 const INITIAL_STATE: ILeaguesState = {
   leagues: [],
   competition: null,
   leagueShedule: null,
-  isLoading: false
 }
 
 const leaguesReducer = (state = INITIAL_STATE, action: LeaguesTypes): ILeaguesState => {
   switch (action.type) {
-    case types.GET_ALL_LEAGUES:
-    case types.GET_COMPETITION_BY_ID:
-    case types.GET_MATCHES_BY_COMPETITION_ID:
-      return {
-        ...state,
-        isLoading: true
-      }
-
     case types.GET_ALL_LEAGUES_SUCCESS:
       return {
         ...state,
         leagues: action.payload,
-        isLoading: false
       }
 
     case types.GET_COMPETITION_BY_ID_SUCCESS:
@@ -41,6 +30,8 @@ const leaguesReducer = (state = INITIAL_STATE, action: LeaguesTypes): ILeaguesSt
       }
 
     case types.GET_MATCHES_BY_COMPETITION_ID_SUCCESS:
+    case types.GET_COMP_MATCHES_BY_YEAR_SUCCESS:
+    case types.GET_COMP_MATCHES_BY_DATE_RANGE_SUCCESS:
       return {
         ...state,
         leagueShedule: action.payload
@@ -51,8 +42,7 @@ const leaguesReducer = (state = INITIAL_STATE, action: LeaguesTypes): ILeaguesSt
         ...state,
         leagues: [],
         competition: null,
-        leagueShedule: null,
-        isLoading: false
+        leagueShedule: null
       }
 
     default:

@@ -1,16 +1,18 @@
-import { ITeamById } from '../../Interfaces/TeamInterfaces';
+import { ITeamById, ITeamShedule } from '../../Interfaces/TeamInterfaces';
 import { ITeamByCompetition } from '../../Interfaces/TeamInterfaces'
 import { TeamsTypes } from './TeamsActionTypes'
 import * as types from './TeamsActionTypes'
 
 interface ITeamState {
   teamByCompetition: ITeamByCompetition | null,
-  team: ITeamById | null
+  team: ITeamById | null,
+  teamShedule: ITeamShedule | null
 }
 
 const INITIAL_STATE: ITeamState = {
   teamByCompetition: null,
-  team: null
+  team: null,
+  teamShedule: null
 }
 
 const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
@@ -19,6 +21,12 @@ const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
       return {
         ...state,
         teamByCompetition: action.payload
+      }
+
+    case types.GET_TEAM_MATCHES_BY_DATE_RANGE_SUCCESS:
+      return {
+        ...state,
+        teamShedule: action.payload
       }
 
     case types.GET_TEAM_BY_ID_SUCCESS:
@@ -32,6 +40,12 @@ const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
         ...state,
         teamByCompetition: null,
         team: null
+      }
+
+    case types.GET_TEAM_SHEDULE_SUCCESS:
+      return {
+        ...state,
+        teamShedule: action.payload
       }
 
     default:

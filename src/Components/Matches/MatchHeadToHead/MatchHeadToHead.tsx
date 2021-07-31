@@ -8,6 +8,8 @@ interface Props {
 }
 
 export default function MatchHeadToHead(props: Props) {
+  if (!props.head2head) return <h3>There`s no staticstic for this match...</h3>
+
   const awayTeam = props.head2head.awayTeam
   const homeTeam = props.head2head.homeTeam
 
