@@ -4,6 +4,8 @@ import './matchesPage.scss'
 import { IMatchesContainer } from '../../Containers/MatchesContainer'
 import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
 import BrandHeading from '../../Components/BrandHeading/BrandHeading'
+import CustomDateRange from '../../Components/DateRange/DateRange'
+import DateInfo from '../../Components/DateFilter/DateInfo/DateInfo'
 
 export default function MatchesPage(props: IMatchesContainer) {
   return (
@@ -12,6 +14,15 @@ export default function MatchesPage(props: IMatchesContainer) {
         <BrandHeading className='matches-page__heading'>
           Today matches
         </BrandHeading>
+
+        <div className='matches-page__date-filter'>
+          <CustomDateRange handleDateChange={props.handleDateChange}/>
+
+          <DateInfo
+            date={props.date}
+            handleClearFiltering={props.handleClearFiltering}
+          />
+        </div>
 
         <MatchesList
           matches={props.matches}

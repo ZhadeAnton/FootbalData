@@ -23,6 +23,18 @@ export interface GetMatchByIdSuccess {
   payload: IMatchInDetails
 }
 
+export const GET_MATCHES_BY_DATE_RANGE = 'GET_MATCHES_BY_DATE_RANGE'
+export interface GetMatchesByDateRange {
+  type: typeof GET_MATCHES_BY_DATE_RANGE,
+  payload: [string, string]
+}
+
+export const GET_MATCHES_BY_DATE_RANGE_SUCCESS = 'GET_MATCHES_BY_DATE_RANGE_SUCCESS'
+export interface GetMatchesByDateRangeSuccess {
+  type: typeof GET_MATCHES_BY_DATE_RANGE_SUCCESS,
+  payload: Array<IMatch>
+}
+
 export const CLEAR_MATCHES = 'CLEAR_MATCHES'
 export interface ClearMatches {
   type: typeof CLEAR_MATCHES
@@ -33,4 +45,6 @@ export type MatchesTypes =
 | GetAllMatchesSuccess
 | GetMatchById
 | GetMatchByIdSuccess
+| GetMatchesByDateRange
+| GetMatchesByDateRangeSuccess
 | ClearMatches

@@ -20,6 +20,7 @@ const matchesReducer = (state = INITIAL_STATE, action: MatchesTypes): IMatchStat
       }
 
     case types.GET_ALL_MATHCES_SUCCESS:
+    case types.GET_MATCHES_BY_DATE_RANGE_SUCCESS:
       return {
         ...state,
         matches: [...action.payload]
