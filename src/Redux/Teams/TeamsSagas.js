@@ -1,4 +1,5 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects'
+import { v4 } from 'uuid'
 
 import * as types from './TeamsActionTypes'
 import * as actions from './TeamsActionCreators.ts'
@@ -43,8 +44,10 @@ function* getTeamMatchesByDateRange({payload: { id, date }}) {
     const response = yield call(API.fetchTeamMatchesBydateRange, id, date)
     const teamShedule = yield response.data
     yield put(actions.getTeamMatchesByDateRangeSuccess(teamShedule))
+    yield put(notification.addNotification('SUCCESS', `Filtered by ${date}`, v4()))
   } catch (error) {
-    yield put(notification.addNotification('ERROR', error.message, v4()))
+    yield put(
+        notification.addNotification('ERROR', 'This date range is not available', v4()))
   }
 }
 
@@ -53,8 +56,9 @@ function* getCompTeamsByYear({payload: { id, year }}) {
     const response = yield call(API.fetchCompetitionTeamsByYear, id, year)
     const compMatches = yield response.data
     yield put(actions.getCompMatchesByYearSuccess(compMatches))
+    yield put(notification.addNotification('SUCCESS', `Sorted by ${year} year`, v4()))
   } catch (error) {
-    yield put(notification.addNotification('ERROR', error.message, v4()))
+    yield put(notification.addNotification('ERROR', 'This year is not available', v4()))
   }
 }
 
