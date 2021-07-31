@@ -33,6 +33,7 @@ export default function LeaugePage(props: ILeagueContainer) {
         <BrandTitle style={{marginBottom: 1 + 'rem'}}>
           {`Info for ${props.competition?.name}`}
         </BrandTitle>
+
         <DescriptionList
           data={competitionData}
         />

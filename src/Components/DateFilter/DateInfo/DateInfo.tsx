@@ -1,11 +1,12 @@
 import React from 'react'
 import { Button } from 'antd'
 import moment from 'moment'
+import YearTitle from '../YearTitle/YearTitle'
 
 interface Props {
   year?: string,
-  date: [string, string] | null,
-  handleClearFiltering: () => void
+  date?: [string, string] | null,
+  handleClearFiltering?: () => void
 }
 
 export default function DateInfo(props: Props) {
@@ -28,13 +29,7 @@ export default function DateInfo(props: Props) {
       }
 
       { props.year && props.date === null &&
-        <h6 className='date-filter__info--title'>
-          Filter by year:&nbsp;
-
-          <time>
-            { props.year }
-          </time>
-        </h6>
+        <YearTitle year={props.year}/>
       }
 
       { props.date &&

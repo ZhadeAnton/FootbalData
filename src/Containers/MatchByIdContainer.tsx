@@ -13,7 +13,6 @@ export interface IMatchInDetailsContainer {
 
 export default function MatchByIdContainer() {
   const dispatch = useAppDispatch()
-  // Params is a id of the the match (from URL)
   const params: any = useParams()
   const matchId = params.id
 

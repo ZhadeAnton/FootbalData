@@ -29,7 +29,7 @@ function* getMatchById({payload}) {
     yield put(actions.getMatchByIdSuccess(matchInDetails))
   } catch (error) {
     yield put(
-        notification.addNotification('ERROR', `There's no mathc with such id`, v4()))
+        notification.addNotification('ERROR', `There's no match with such id`, v4()))
   }
 }
 
@@ -39,6 +39,7 @@ function* getMatchesByDateRange({payload}) {
     const response = yield call(API.fetchMatchByDateRange, payload)
     const matches = yield response.data.matches
     yield put(actions.getMatchesByDateRangeSuccess(matches))
+    yield put(notification.addNotification('SUCCESS', `Filtered by ${payload}`, v4()))
   } catch (error) {
     yield put(
         notification.addNotification('ERROR', 'This dates range is not available', v4()))

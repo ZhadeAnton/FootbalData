@@ -7,6 +7,7 @@ import {
   clearLeagues,
   getAllLeagues,
   getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
+import { clearFilter } from '../Redux/Filterlist/FilterListActionCreators'
 import LeaguesPage from '../Routes/LeaguesPage/LeaguesPage'
 import Preloader from '../Components/Preloader/Preloader'
 
@@ -20,12 +21,20 @@ export default function LeaguesContainer() {
   const history = useHistoryPush()
 
   const leagues = useAppSelector((state) => state.league.leagues)
+  const searchTerm = useAppSelector((state) => state.filter.searchTerm)
+
+  const filteredLeagues = leagues.filter((league) => {
+    return league.name
+        .toLowerCase()
+        .includes(searchTerm)
+  })
 
   useEffect(() => {
     dispatch(getAllLeagues())
 
     return () => {
       dispatch(clearLeagues())
+      dispatch(clearFilter())
     }
   }, [])
 
@@ -38,7 +47,7 @@ export default function LeaguesContainer() {
 
   return (
     <LeaguesPage
-      leagues={leagues}
+      leagues={filteredLeagues}
       handleClickByLeague={handleClickByLeague}
     />
   )
