@@ -50,6 +50,18 @@ export interface GetTeamMatchesByDateRangeSuccess {
   payload: ITeamShedule
 }
 
+export const GET_COMP_TEAMS_BY_YEAR = 'GET_COMP_TEAMS_BY_YEAR'
+export interface GetCompTeamsByYear {
+  type: typeof GET_COMP_TEAMS_BY_YEAR,
+  payload: { id: number, year: string }
+}
+
+export const GET_COMP_TEAMS_BY_YEAR_SUCCESS = 'GET_COMP_TEAMS_BY_YEAR_SUCCESS'
+export interface GetCompTeamsByYearSuccess {
+  type: typeof GET_COMP_TEAMS_BY_YEAR_SUCCESS,
+  payload: ITeamByCompetition
+}
+
 export const CLEAR_TEAMS = 'CLEAR_TEAMS'
 export interface ClearTeams {
   type: typeof CLEAR_TEAMS
@@ -64,4 +76,6 @@ export type TeamsTypes =
 | GetTeamSheduleSuccess
 | GetTeamMatchesByDateRange
 | GetTeamMatchesByDateRangeSuccess
+| GetCompTeamsByYear
+| GetCompTeamsByYearSuccess
 | ClearTeams

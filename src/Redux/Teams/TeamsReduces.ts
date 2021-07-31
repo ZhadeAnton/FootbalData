@@ -18,6 +18,7 @@ const INITIAL_STATE: ITeamState = {
 const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
   switch (action.type) {
     case types.GET_TEAM_BY_COMPETITION_ID_SUCCESS:
+    case types.GET_COMP_TEAMS_BY_YEAR_SUCCESS:
       return {
         ...state,
         teamByCompetition: action.payload

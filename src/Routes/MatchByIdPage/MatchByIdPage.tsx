@@ -67,6 +67,8 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
 
         <div className='match-details__match-item'>
           <MatchItem
+            awayTeamScore={props.matchInDetails.match.score.fullTime.awayTeam}
+            homeyTeamScore={props.matchInDetails.match.score.fullTime.homeTeam}
             awayTeamName={props.matchInDetails.match.awayTeam.name}
             homeTeamName={props.matchInDetails.match.homeTeam.name}
           />

@@ -4,43 +4,49 @@ import Preloader from '../Components/Preloader/Preloader'
 
 import { useAppDispatch, useAppSelector } from '../Hooks/usePreTypedHook'
 import { ITeamByCompetition } from '../Interfaces/TeamInterfaces'
-import { getTeamByCompetitionId } from '../Redux/Teams/TeamsActionCreators'
+import {
+  getCompMatchesByYear } from '../Redux/Teams/TeamsActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
-import LeagueTeamsPage from '../Routes/LeagueTeamsPage/LeagueTeamsPage'
+import useDateFilter from '../Hooks/useDateFilter'
 import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
+import LeagueTeamsPage from '../Routes/LeagueTeamsPage/LeagueTeamsPage'
 
 export interface ILeagueTeamContainer {
+  year: string,
   teamByCompetition: ITeamByCompetition | null,
-  handleClickByTeam: (id: number) => void
+  handleClickByTeam: (id: number) => void,
+  handleYearChange: (year: string) => void
 }
 
 export default function LeagueTeamsContainer() {
   const dispatch = useAppDispatch()
   const params: any = useParams()
+  const dateFilter = useDateFilter()
   const history = useHistoryPush()
-  // Get league id from location for call getCompetitionById
   const leagueId = params.id
 
   const teamByCompetition = useAppSelector((state) => state.team.teamByCompetition)
 
   useEffect(() => {
-    dispatch(getTeamByCompetitionId(leagueId))
+    dispatch(getCompMatchesByYear(leagueId, dateFilter.year as string))
 
     return () => {
       dispatch(clearLeagues())
     }
-  }, [])
+  }, [dateFilter.year])
 
   const handleClickByTeam = (id: number) => {
     history(`/team/${id}`)
   }
 
-  if (!teamByCompetition) return <Preloader />
+  if (teamByCompetition === null) return <Preloader />
 
   return (
     <LeagueTeamsPage
+      year={dateFilter.year}
       teamByCompetition={teamByCompetition}
       handleClickByTeam={handleClickByTeam}
+      handleYearChange={dateFilter.handleSetYear}
     />
   )
 }

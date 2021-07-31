@@ -45,6 +45,18 @@ export const getTeamMatchesByDateRangeSuccess = (teamShedule: ITeamShedule)
   payload: teamShedule
 })
 
+export const getCompMatchesByYear = (id: number, year: string)
+  : types.GetCompTeamsByYear => ({
+  type: types.GET_COMP_TEAMS_BY_YEAR,
+  payload: { id, year }
+})
+
+export const getCompMatchesByYearSuccess = (teamByCompetition: ITeamByCompetition)
+  : types.GetCompTeamsByYearSuccess => ({
+  type: types.GET_COMP_TEAMS_BY_YEAR_SUCCESS,
+  payload: teamByCompetition
+})
+
 export const clearTeams = (): types.ClearTeams => ({
   type: types.CLEAR_TEAMS
 })

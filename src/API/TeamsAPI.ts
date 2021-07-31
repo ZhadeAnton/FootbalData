@@ -13,6 +13,16 @@ export function fetchTeamsByCompetitionId(id: number) {
   })
 }
 
+export function fetchCompetitionTeamsByYear(id: number, year: string) {
+  return axios({
+    method: 'get',
+    url: `https://${BASE_URL}/competitions/${id}/teams/?season=${year}`,
+    headers: {
+      'X-Auth-Token': API_KEY
+    }
+  })
+}
+
 export function fetchTeamById(id: number) {
   return axios({
     method: 'get',

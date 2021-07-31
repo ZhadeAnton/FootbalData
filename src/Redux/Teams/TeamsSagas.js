@@ -48,6 +48,16 @@ function* getTeamMatchesByDateRange({payload: { id, date }}) {
   }
 }
 
+function* getCompTeamsByYear({payload: { id, year }}) {
+  try {
+    const response = yield call(API.fetchCompetitionTeamsByYear, id, year)
+    const compMatches = yield response.data
+    yield put(actions.getCompMatchesByYearSuccess(compMatches))
+  } catch (error) {
+    yield put(notification.addNotification('ERROR', error.message, v4()))
+  }
+}
+
 function* onGetTeamByCompetitionId() {
   yield takeLatest(types.GET_TEAM_BY_COMPETITION_ID, getTeamByCompetitionId)
 }
@@ -64,11 +74,16 @@ function* onGetTeamMatchesByDateRange() {
   yield takeLatest(types.GET_TEAM_MATCHES_BY_DATE_RANGE, getTeamMatchesByDateRange)
 }
 
+function* onGetCompTeamsByYear() {
+  yield takeLatest(types.GET_COMP_TEAMS_BY_YEAR, getCompTeamsByYear)
+}
+
 export default function* teamSagas() {
   yield all([
     call(onGetTeamByCompetitionId),
     call(onGetTeamById),
     call(onGetTeamShedule),
-    call(onGetTeamMatchesByDateRange)
+    call(onGetTeamMatchesByDateRange),
+    call(onGetCompTeamsByYear)
   ])
 }
