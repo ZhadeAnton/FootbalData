@@ -5,7 +5,7 @@ import { IMatch } from '../../../Interfaces/MatchIntarfaces'
 
 interface Props {
   awayTeamName: IMatch['awayTeam']['name'],
-  homeTeamName: IMatch['homeTeam']['name'],
+  homeTeamName: IMatch['homeTeam']['name']
 }
 
 export default function MatchItem(props: Props) {
