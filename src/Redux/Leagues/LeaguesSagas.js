@@ -2,6 +2,7 @@ import { takeLatest, call, put, all } from 'redux-saga/effects'
 
 import * as actions from './LeaguesActionCreators'
 import * as types from './LeaguesActionTypes'
+import * as notification from '../Notification/NotificationActionCreators'
 import * as API from '../../API/LeaguesAPI'
 
 function* getAllLeagues() {
@@ -10,7 +11,7 @@ function* getAllLeagues() {
     const leagues = yield response.data
     yield put(actions.getAllLeaguesSuccess(leagues.competitions))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -21,7 +22,7 @@ function* getCompetitionById({payload}) {
     const competition = yield response.data
     yield put(actions.getCompetitionByIdSuccess(competition))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -32,7 +33,7 @@ function* getCompetitionMatches({payload}) {
     const sheduleObject = yield response.data
     yield put(actions.getMatchesByCompetitionIdSuccess(sheduleObject))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -42,7 +43,7 @@ function* getCompetitionMatchesByYear({payload: { id, year }}) {
     const sheduleObject = yield response.data
     yield put(actions.getCompetitionMatchesByYearSuccess(sheduleObject))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -52,7 +53,7 @@ function* getCompetitionMatchesDateRange({payload: { id, date }}) {
     const sheduleObject = yield response.data
     yield put(actions.getCompMatchesByDateRangeSuccess(sheduleObject))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 

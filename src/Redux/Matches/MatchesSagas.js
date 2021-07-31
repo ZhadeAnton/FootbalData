@@ -1,7 +1,9 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects'
+import { v4 } from 'uuid'
 
 import * as actions from './MatchesActionCreators'
 import * as types from './MatchesActionTypes'
+import * as notification from '../Notification/NotificationActionCreators'
 import * as API from '../../API/MatchesAPI'
 import { featchAllLeagues } from '../../API/LeaguesAPI'
 
@@ -15,7 +17,7 @@ function* getAllMatches() {
     const matches = yield response.data
     yield put(actions.getAllMatchesSuccess(matches.matches))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -26,7 +28,8 @@ function* getMatchById({payload}) {
     const matchInDetails = yield response.data
     yield put(actions.getMatchByIdSuccess(matchInDetails))
   } catch (error) {
-    console.error(error)
+    yield put(
+        notification.addNotification('ERROR', `There's no mathc with such id`, v4()))
   }
 }
 
@@ -37,7 +40,8 @@ function* getMatchesByDateRange({payload}) {
     const matches = yield response.data.matches
     yield put(actions.getMatchesByDateRangeSuccess(matches))
   } catch (error) {
-    console.error(error)
+    yield put(
+        notification.addNotification('ERROR', 'This dates range is not available', v4()))
   }
 }
 
