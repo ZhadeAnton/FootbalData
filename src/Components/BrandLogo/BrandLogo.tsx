@@ -14,7 +14,7 @@ export default function BrandLogo() {
       <img
         className='brand-logo__image'
         src={brandLogo}
-        alt="Brand logo"
+        alt="Logo"
         onClick={() => history('/')}
       />
     </div>
