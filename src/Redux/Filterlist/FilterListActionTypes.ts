@@ -4,5 +4,11 @@ export interface FilterItems {
   payload: string
 }
 
+export const CLEAR_FILTER = 'CLEAR_FILTER'
+export interface ClearFilter {
+  type: typeof CLEAR_FILTER
+}
+
 export type FilterTypes =
 | FilterItems
+| ClearFilter

@@ -7,6 +7,7 @@ import {
   clearLeagues,
   getAllLeagues,
   getCompetitionById } from '../Redux/Leagues/LeaguesActionCreators'
+import { clearFilter } from '../Redux/Filterlist/FilterListActionCreators'
 import LeaguesPage from '../Routes/LeaguesPage/LeaguesPage'
 import Preloader from '../Components/Preloader/Preloader'
 
@@ -33,6 +34,7 @@ export default function LeaguesContainer() {
 
     return () => {
       dispatch(clearLeagues())
+      dispatch(clearFilter())
     }
   }, [])
 

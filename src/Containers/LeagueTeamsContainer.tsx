@@ -8,6 +8,7 @@ import {
   getCompMatchesByYear } from '../Redux/Teams/TeamsActionCreators'
 import useHistoryPush from '../Hooks/useHistory'
 import useDateFilter from '../Hooks/useDateFilter'
+import { clearFilter } from '../Redux/Filterlist/FilterListActionCreators'
 import { clearLeagues } from '../Redux/Leagues/LeaguesActionCreators'
 import LeagueTeamsPage from '../Routes/LeagueTeamsPage/LeagueTeamsPage'
 
@@ -43,6 +44,7 @@ export default function LeagueTeamsContainer() {
 
     return () => {
       dispatch(clearLeagues())
+      dispatch(clearFilter())
     }
   }, [dateFilter.year])
 

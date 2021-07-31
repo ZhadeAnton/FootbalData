@@ -62,7 +62,7 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
         <CompetitionHeader
           competitionImage={props.matchInDetails.match.competition.area.ensignUrl}
           competitionName={props.matchInDetails.match.competition.area.name}
-          competitionVenue={props.matchInDetails.match.venue}
+          competitionVenue={props.matchInDetails.match.competition.name}
         />
 
         <div className='match-details__match-item'>

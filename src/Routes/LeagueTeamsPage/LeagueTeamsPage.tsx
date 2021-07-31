@@ -8,7 +8,7 @@ import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHea
 import BackTopButton from '../../Components/BackButton/BackButton'
 import CustomDatePicker from '../../Components/DatePicker/DatePicker'
 import YearTitle from '../../Components/DateFilter/YearTitle/YearTitle'
-import FilterInput from '../../Components/FilterInput/FilterInput'
+import SortInput from '../../Components/FilterInput/SortInput'
 
 export default function LeagueTeamsPage(props: ILeagueTeamContainer) {
   return (
@@ -25,7 +25,7 @@ export default function LeagueTeamsPage(props: ILeagueTeamContainer) {
 
       <Divider />
 
-      <FilterInput />
+      <SortInput />
 
       <TeamsList
         teams={props.teams!}

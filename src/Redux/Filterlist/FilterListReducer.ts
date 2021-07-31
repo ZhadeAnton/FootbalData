@@ -17,6 +17,12 @@ const filterReducer = (state = INITIAL_STATE, action: FilterTypes): IFilterState
         searchTerm: action.payload
       }
 
+    case types.CLEAR_FILTER:
+      return {
+        ...state,
+        searchTerm: ''
+      }
+
     default:
       return state
   }
