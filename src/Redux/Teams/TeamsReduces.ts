@@ -36,17 +36,18 @@ const teamReducer = (state = INITIAL_STATE, action: TeamsTypes): ITeamState => {
         team: action.payload
       }
 
-    case types.CLEAR_TEAMS:
-      return {
-        ...state,
-        teamByCompetition: null,
-        team: null
-      }
-
     case types.GET_TEAM_SHEDULE_SUCCESS:
       return {
         ...state,
         teamShedule: action.payload
+      }
+
+    case types.CLEAR_TEAMS:
+      return {
+        ...state,
+        teamByCompetition: null,
+        team: null,
+        teamShedule: null
       }
 
     default:

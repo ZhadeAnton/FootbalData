@@ -38,7 +38,7 @@ export default function MatchesContainer() {
   }, [])
 
   useEffect(() => {
-    if (dateFilter.date !==null) {
+    if (dateFilter.date !== null) {
       dispatch(getMatchesByDateRange(dateFilter.date))
     }
 

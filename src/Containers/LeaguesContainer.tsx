@@ -20,6 +20,13 @@ export default function LeaguesContainer() {
   const history = useHistoryPush()
 
   const leagues = useAppSelector((state) => state.league.leagues)
+  const searchTerm = useAppSelector((state) => state.filter.searchTerm)
+
+  const filteredLeagues = leagues.filter((league) => {
+    return league.name
+        .toLocaleLowerCase()
+        .includes(searchTerm)
+  })
 
   useEffect(() => {
     dispatch(getAllLeagues())
@@ -38,7 +45,7 @@ export default function LeaguesContainer() {
 
   return (
     <LeaguesPage
-      leagues={leagues}
+      leagues={filteredLeagues}
       handleClickByLeague={handleClickByLeague}
     />
   )

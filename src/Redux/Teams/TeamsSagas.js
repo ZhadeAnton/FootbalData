@@ -56,7 +56,7 @@ function* getCompTeamsByYear({payload: { id, year }}) {
     const response = yield call(API.fetchCompetitionTeamsByYear, id, year)
     const compMatches = yield response.data
     yield put(actions.getCompMatchesByYearSuccess(compMatches))
-    yield put(notification.addNotification('SUCCESS', `Sorted by ${year} year`, v4()))
+    yield put(notification.addNotification('SUCCESS', `Filtered by ${year} year`, v4()))
   } catch (error) {
     yield put(notification.addNotification('ERROR', 'This year is not available', v4()))
   }
