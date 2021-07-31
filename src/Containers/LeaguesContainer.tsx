@@ -24,7 +24,7 @@ export default function LeaguesContainer() {
 
   const filteredLeagues = leagues.filter((league) => {
     return league.name
-        .toLocaleLowerCase()
+        .toLowerCase()
         .includes(searchTerm)
   })
 

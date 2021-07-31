@@ -13,6 +13,8 @@ import LeagueTeamsPage from '../Routes/LeagueTeamsPage/LeagueTeamsPage'
 
 export interface ILeagueTeamContainer {
   year: string,
+  teams: ITeamByCompetition['teams'] | null,
+  competition: ITeamByCompetition['competition'] | null,
   teamByCompetition: ITeamByCompetition | null,
   handleClickByTeam: (id: number) => void,
   handleYearChange: (year: string) => void
@@ -26,6 +28,15 @@ export default function LeagueTeamsContainer() {
   const leagueId = params.id
 
   const teamByCompetition = useAppSelector((state) => state.team.teamByCompetition)
+  const searchTerm = useAppSelector((state) => state.filter.searchTerm)
+
+  const teams = teamByCompetition?.teams
+  const competition = teamByCompetition?.competition
+  const filteredTeams = teams?.filter((team) => {
+    return team.name
+        .toLowerCase()
+        .includes(searchTerm)
+  })
 
   useEffect(() => {
     dispatch(getCompMatchesByYear(leagueId, dateFilter.year as string))
@@ -43,6 +54,8 @@ export default function LeagueTeamsContainer() {
 
   return (
     <LeagueTeamsPage
+      teams={filteredTeams!}
+      competition={competition!}
       year={dateFilter.year}
       teamByCompetition={teamByCompetition}
       handleClickByTeam={handleClickByTeam}
