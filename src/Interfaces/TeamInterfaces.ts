@@ -1,3 +1,5 @@
+import { IMatch } from './MatchIntarfaces';
+
 export interface ITeam {
   id: number,
   area: {
@@ -43,6 +45,11 @@ export interface ITeamByCompetition {
     winner: string | null
   },
   teams: Array<ITeamWithImage>
+}
+
+export interface ITeamShedule {
+  filters: {},
+  matches: Array<IMatch>
 }
 
 export interface ITeamById {

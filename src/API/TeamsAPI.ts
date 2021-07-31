@@ -21,3 +21,13 @@ export function fetchTeamById(id: number) {
     }
   })
 }
+
+export function fetchTeamShedule(id: number) {
+  return axios({
+    method: 'get',
+    url: `https://${BASE_URL}/teams/${id}/matches`,
+    headers: {
+      'X-Auth-Token': API_KEY
+    }
+  })
+}

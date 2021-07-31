@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from 'antd';
 
-import BrandDescription from '../../Containers/BrandDescription/BrandDescription'
+import BrandDescription from '../BrandDescription/BrandDescription'
 import BrandHeading from '../BrandHeading/BrandHeading'
 
 import './competitionHeader.scss'
