@@ -10,6 +10,7 @@ import DescriptionList from '../../Components/TeamInfoList/DescriptionList'
 import MatchDate from '../../Components/Matches/MatchDate/MatchDate'
 import BrandTitle from '../../Components/BrandTitle/BrandTitle'
 import { getMatchScore, getWinner, parseFromCaps } from '../../Utils/MatchUtils'
+import MatchItem from '../../Components/Matches/MatchItem/MatchItem'
 
 export default function MatchByIdPage(props: IMatchInDetailsContainer) {
   const date = <MatchDate
@@ -63,6 +64,13 @@ export default function MatchByIdPage(props: IMatchInDetailsContainer) {
           competitionName={props.matchInDetails.match.competition.area.name}
           competitionVenue={props.matchInDetails.match.venue}
         />
+
+        <div className='match-details__match-item'>
+          <MatchItem
+            awayTeamName={props.matchInDetails.match.awayTeam.name}
+            homeTeamName={props.matchInDetails.match.homeTeam.name}
+          />
+        </div>
 
         <div className='match-details__status'>
           <MatchStatus status={props.matchInDetails.match.status}/>

@@ -28,16 +28,16 @@
   }
 
   &__title {
+    text-transform: capitalize;
     font-size: var(--font-size-1);
     font-weight: 600;
     color: var(--color-white);
-    text-transform: capitalize;
   }
 
-    @include media-breakpoint-down(lg) {
-      padding: .2rem .8rem;
-      border-radius: 10rem;
-      max-width: 6rem;
-      text-align: center;
+  @include media-breakpoint-down(lg) {
+    padding: .2rem .8rem;
+    border-radius: 10rem;
+    max-width: 6rem;
+    text-align: center;
   }
 }

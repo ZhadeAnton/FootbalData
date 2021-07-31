@@ -2,7 +2,11 @@
 @import '../../Scss/variables';
 
 .match-details {
-  padding: var(--space-lg);
+  padding: var(--space-lg) 0;
+
+  &__match-item {
+    margin: 1rem 0;
+  }
 
   &__status {
     display: flex;
@@ -10,11 +14,17 @@
   }
 
   @include media-breakpoint-down(sm) {
-    padding: var(--space-lg);
+    padding: var(--space-md) 0;
 
     &__status {
       justify-content: center;
       margin: var(--space-vsm) 0;
+    }
+
+    &__match-item {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
     }
   }
 }
