@@ -1,5 +1,4 @@
-@import '../../Scss/_mixins';
-@import '../../Scss/typography';
+@import '../../Scss/mixins';
 @import '../../Scss/variables';
 
 .notifications-wrapper {
@@ -46,7 +45,7 @@
 
     &--message {
       margin: 0;
-      @include font-3;
+      font-size: var(--font-size-3);
       font-weight: 600;
       font-family: var(--e-global-typography-tertiary);
       color: var(--e-global-color-secondary);
@@ -55,22 +54,22 @@
 
   &__success {
     i {
-      color: var(--e-global-color-primary);
+      color: var(--color-lime);
     }
   }
 
   &__error {
     i {
-      color: var(--e-global-color-error);
+      color: var(--color-red);
     }
   }
 
   &__error .bar {
-    background-color: var(--e-global-color-error);
+    background-color: var(--color-red);
   }
 
   &__success .bar {
-    background-color: var(--e-global-color-primary);
+    background-color: var(--color-lime);
   }
 
   @include media-breakpoint-down(md) {

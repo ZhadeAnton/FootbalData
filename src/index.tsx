@@ -6,11 +6,14 @@ import { Provider } from 'react-redux';
 import './index.css';
 import store from './Redux/Store/Store';
 import App from './App';
+import NotificationProvider from './Providers/NotificationProvider';
 
 ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <NotificationProvider>
+          <App />
+        </NotificationProvider>
       </BrowserRouter>
     </Provider>,
     document.getElementById('root')

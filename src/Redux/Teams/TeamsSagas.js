@@ -2,6 +2,7 @@ import { takeLatest, call, put, all } from 'redux-saga/effects'
 
 import * as types from './TeamsActionTypes'
 import * as actions from './TeamsActionCreators.ts'
+import * as notification from '../Notification/NotificationActionCreators'
 import * as API from '../../API/TeamsAPI'
 
 function* getTeamByCompetitionId({payload}) {
@@ -11,7 +12,7 @@ function* getTeamByCompetitionId({payload}) {
     const teambyCompetition = yield response.data
     yield put(actions.getTeamByCompetitionIdSuccess(teambyCompetition))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -22,7 +23,7 @@ function* getTeamById({payload}) {
     const team = yield response.data
     yield put(actions.getTeamByIdSuccess(team))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -33,7 +34,7 @@ function* getTeamShedule({payload}) {
     const teamShedule = yield response.data
     yield put(actions.getTeamSheduleSuccess(teamShedule))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
@@ -43,7 +44,7 @@ function* getTeamMatchesByDateRange({payload: { id, date }}) {
     const teamShedule = yield response.data
     yield put(actions.getTeamMatchesByDateRangeSuccess(teamShedule))
   } catch (error) {
-    console.error(error)
+    yield put(notification.addNotification('ERROR', error.message, v4()))
   }
 }
 
