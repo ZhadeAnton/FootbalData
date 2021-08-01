@@ -1,13 +1,14 @@
 @import '../../Scss/variables';
 
 .leagues {
-  padding: var(--space-xl) 0;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
 
-  @include media-breakpoint-down(md) {
-    padding: var(--space-lg) 0;
+  @include media-breakpoint-down(lg) {
+    padding-top: var(--space-md);
   }
 
-  @include media-breakpoint-down(sm) {
-    padding: var(--space-md) 0;
+  @include media-breakpoint-down(md) {
+    text-align: center;
   }
 }

@@ -49,6 +49,11 @@
   }
   
   @include media-breakpoint-down(md) {
-    padding: var(--space-md) 0;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-lg);
+
+    &__bottom {
+      padding-top: var(--space-sm);
+    }
   }
 }

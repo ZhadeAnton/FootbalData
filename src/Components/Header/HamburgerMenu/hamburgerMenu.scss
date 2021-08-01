@@ -1,0 +1,89 @@
+@import '../../../scss/variables';
+
+.hamburger-menu {
+  width: 2.9375rem;
+  height: 1.875rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: .6rem;
+  transition: all .5s ease;
+  cursor: pointer;
+
+  &__line {
+    height: 2px;
+    margin-bottom: .45rem;
+    transition: all .5s ease;
+    background-color: var(--color-red);
+
+    &:nth-child(1) {
+      width: 40%;
+    }
+
+    &:nth-child(2) {
+      width: 90%;
+    }
+
+    &:nth-child(3) {
+      width: 40%;
+      transform: translateX(1.5rem);
+    }
+  }
+
+  &:hover {
+    .hamburger-menu__line {
+      opacity: .8;
+
+      &:nth-child(1) {
+        width: 90%;
+      }
+  
+      &:nth-child(2) {
+        width: 40%;
+        transform: translateX(.8rem);
+      }
+  
+      &:nth-child(3) {
+        width: 90%;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__line {
+      margin-bottom: .4rem;
+  
+      &:nth-child(1) {
+        width: 30%;
+      }
+  
+      &:nth-child(2) {
+        width: 80%;
+      }
+  
+      &:nth-child(3) {
+        width: 30%;
+        transform: translateX(1.5rem);
+      }
+    }
+
+    &:hover {
+      .hamburger-menu__line {
+        &:nth-child(1) {
+          width: 80%;
+        }
+    
+        &:nth-child(2) {
+          width: 30%;
+          transform: translateX(.8rem);
+        }
+    
+        &:nth-child(3) {
+          width: 80%;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

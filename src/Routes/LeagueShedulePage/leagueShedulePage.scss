@@ -1,9 +1,12 @@
 @import '../../Scss/variables';
 
 .league-shedule {
-  padding: var(--space-lg) 0;
-  
-  @include media-breakpoint-down(md) {
-    padding: var(--space-md) 0;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xxl);
+  overflow: hidden;
+
+  @include media-breakpoint-down(lg) {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-xl);
   }
 }

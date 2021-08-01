@@ -16,6 +16,16 @@
   background-position: center;
 }
 
+@mixin full-abs {
+  position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
 @mixin abs-position ($top, $right, $bottom, $left) {
   position: absolute; 
   top: $top;

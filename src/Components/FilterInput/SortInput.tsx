@@ -10,7 +10,7 @@ export default function SortInput() {
     <Input
       value={filterHook.seatchTerm}
       allowClear
-      placeholder='Sorting'
+      placeholder='Sort by'
       onChange={(event) => filterHook.handleChange(event.target.value)}
       style={{
         width: 90 + '%',

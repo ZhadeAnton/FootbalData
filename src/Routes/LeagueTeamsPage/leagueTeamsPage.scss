@@ -1,3 +1,10 @@
+@import '../../Scss/variables';
+
 .league-teams-page {
-  padding: var(--space-lg);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: var(--space-md);
+  }
 }

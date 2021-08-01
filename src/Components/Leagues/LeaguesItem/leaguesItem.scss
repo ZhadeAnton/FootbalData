@@ -5,7 +5,7 @@
   flex: 10%;
   max-width: 15%;
   min-width: 10.625rem;
-  height: 15.625rem;
+  height: 14.625rem;
   @include flex-center;
   flex-direction: column;
   margin: var(--space-sm);
@@ -24,12 +24,11 @@
   &__title {
     font-size: var(--font-size-3);
     font-weight: 600;
-    margin-top: var(--space-md);
+    margin-top: var(--space-sm);
   }
 
   &__sub-title {
     font-size: var(--font-size-2);
-    margin-top: var(--space-md);
   }
 
   &:hover {
@@ -38,10 +37,10 @@
   }
 
   @include media-breakpoint-down(md) {
-    flex: 47%;
-    width: 49%;
-    min-width: 13.625rem;
-    min-height: 13.625rem;
+    flex: 33%;
+    width: 33%;
+    min-width: 10.625rem;
+    height: 13.625rem;
 
     &__title {
       font-size: var(--font-size-3);
@@ -49,7 +48,11 @@
   }
 
   @include media-breakpoint-down(sm) {
+    flex: 45%;
+    width: 45%;
     margin: .7rem;
+    min-width: 8.625rem;
+    height: 12.625rem;
 
     &__title {
       margin-top: var(--space-sm);
@@ -58,7 +61,11 @@
   }
 
   @include media-breakpoint-down(vsm) {
-    margin: .5rem;
+    flex: 45%;
+    width: 45%;
+    margin: .3rem;
+    min-width: 8.5rem;
+    height: 12rem;
 
     &__title {
       font-size: var(--font-size-1);
