@@ -3,7 +3,7 @@
 
 .notifications-wrapper {
   position: fixed;
-  bottom: 2%;
+  bottom: 5%;
   left: 2%;
   width: auto;
   max-width: 31.25rem;
@@ -52,13 +52,13 @@
   }
 
   &__success {
-    i {
+    svg {
       color: var(--color-lime);
     }
   }
 
   &__error {
-    i {
+    svg {
       color: var(--color-red);
     }
   }

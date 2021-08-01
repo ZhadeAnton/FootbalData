@@ -14,19 +14,19 @@ export default function CompetitionHeader(props: Props) {
     <section className='competition-info'>
       <div className='competition-info__image-wrapper'>
         {
-          props.competitionImage
-          ?
-            <Image
-              className='competition-info__image-wrapper--image'
-              src={ props.competitionImage }
-              alt={ props.competitionName }
-            />
-        :
+        props.competitionImage
+        ?
           <Image
-            className='competition__header--image'
-            src='https://crests.football-data.org/EUR.svg'
-            alt="UFL"
+            className='competition-info__image-wrapper--image'
+            src={ props.competitionImage }
+            alt={ props.competitionName }
           />
+      :
+        <Image
+          className='competition__header--image'
+          src='https://crests.football-data.org/EUR.svg'
+          alt="UFL"
+        />
         }
       </div>
 

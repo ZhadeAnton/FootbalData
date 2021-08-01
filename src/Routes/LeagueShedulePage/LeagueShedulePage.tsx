@@ -6,6 +6,7 @@ import { ILeagueSheduleContainer } from '../../Containers/LeagueSheduleContainer
 import MatchesList from '../../Components/Matches/MatchesList/MatchesList'
 import CompetitionHeader from '../../Components/CompetitionHeader/CompetitionHeader'
 import DateFilter from '../../Components/DateFilter/DateFilter'
+import BackTopButton from '../../Components/BackButton/BackButton'
 
 export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
   return (
@@ -32,6 +33,8 @@ export default function LeagueShedulePage(props: ILeagueSheduleContainer) {
           matches={props.leagueShedule.matches}
           handleClickByMatch={props.handleClickByMatch}
         />
+
+        <BackTopButton />
       </section>
     </main>
   )

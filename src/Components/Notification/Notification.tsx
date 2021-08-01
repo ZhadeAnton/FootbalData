@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CheckOutlined, CloseOutlined } from '@ant-design/icons'
 
 import './notification.scss'
 import {
@@ -64,8 +65,15 @@ export default function Notification(props: Props) {
       onMouseLeave={handleStartTimer}
     >
       <div className='notification-item__content'>
-        <i className={`bi ${props.type === 'SUCCESS'
-        ? 'bi-check-lg' : 'bi-exclamation-triangle'} notification-item__content--icon`} />
+        {
+          props.type === 'SUCCESS'
+          ?
+          <CheckOutlined
+            className='notification-item__content--icon notification-item__success' />
+          :
+          <CloseOutlined
+            className='notification-item__content--icon notification-item__error'/>
+        }
 
         <p className='notification-item__content--message'>
           {props.message}

@@ -1,11 +1,11 @@
+@import '../../Scss/variables';
+
 .matches-page{
-  padding: var(--space-lg);
-
-  &__wrapper {
-
-  }
-
-  &__heading {
-    text-align: center;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xxl);
+  
+  @include media-breakpoint-down(lg) {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-xl);
   }
 }

@@ -2,7 +2,8 @@
 @import '../../Scss/variables';
 
 .match-details {
-  padding: var(--space-lg) 0;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
 
   &__match-item {
     margin: 1rem 0;
@@ -26,5 +27,9 @@
       justify-content: center;
       flex-wrap: nowrap;
     }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-top: var(--space-md);
   }
 }

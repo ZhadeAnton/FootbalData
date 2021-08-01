@@ -12,7 +12,7 @@ export default function LeaguesPage(props: ILeaguesContainer) {
   return (
     <main className='leagues'>
       <section className='leagues__wrapper container'>
-        <CompetitionHeader competitionName='List of available league'/>
+        <CompetitionHeader competitionName='List of available leagues'/>
 
         <Divider />
 

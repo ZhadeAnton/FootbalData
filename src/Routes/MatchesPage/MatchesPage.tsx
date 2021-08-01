@@ -11,8 +11,11 @@ export default function MatchesPage(props: IMatchesContainer) {
   return (
     <main className='matches-page'>
       <section className='matches-page__wrapper container'>
-        <BrandHeading className='matches-page__heading'>
-          Today matches
+        <BrandHeading
+          className='matches-page__heading'
+          style={{marginBottom: 2 + 'rem'}}
+        >
+          Today`s matches
         </BrandHeading>
 
         <div className='matches-page__date-filter'>
