@@ -1,9 +1,6 @@
 import React from 'react'
 import { Image } from 'antd';
 
-import BrandDescription from '../BrandDescription/BrandDescription'
-import BrandHeading from '../BrandHeading/BrandHeading'
-
 import './competitionHeader.scss'
 
 interface Props {
@@ -27,22 +24,21 @@ export default function CompetitionHeader(props: Props) {
         :
           <Image
             className='competition__header--image'
-            // eslint-disable-next-line max-len
-            src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/LaLiga_Santander_%282%29.svg/220px-LaLiga_Santander_%282%29.svg.png'
+            src='https://crests.football-data.org/EUR.svg'
             alt="UFL"
           />
         }
       </div>
 
       <div className='competition-info__content'>
-        <BrandHeading>
+        <h2 className='competition-info__content--name'>
           { props.competitionName }
-        </BrandHeading>
+        </h2>
 
         { props.competitionVenue &&
-        <BrandDescription>
-          { props.competitionVenue }
-        </BrandDescription>
+        <h4 className='competition-info__content--venue'>
+          {`Venue: ${props.competitionVenue}` }
+        </h4>
         }
       </div>
     </section>

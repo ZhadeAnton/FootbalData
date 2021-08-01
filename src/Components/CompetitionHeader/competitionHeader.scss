@@ -3,11 +3,19 @@
 
 .competition-info {
   @include flex-align-center;
+  padding: 2rem;
+  background-image: url(../../Assets/JPG/legue-back.jpeg);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   &__image-wrapper {
     &--image {
       width: 15rem;
       height: auto;
+      padding: .5rem;
+      // background-color: var(--color-white-light-3);
     }
   }
 
@@ -17,19 +25,53 @@
     margin-left: var(--space-md);
 
     &--name {
-      font-size: var(--font-size-8);
       margin-bottom: .3rem;
+      font-weight: 600;
+      font-size: var(--font-size-7);
+      font-family: var(--typography-secondary);
+      color: var(--color-white);
     }
   
     &--venue {
       font-size: var(--font-size-4);
+      font-family: var(--typography-secondary);
+      color: var(--color-grey);
     }
   }
 
   @include media-breakpoint-down(lg) {
     &__image-wrapper {
       &--image {
+        padding: .4rem;
         width: 13rem;
+      }
+    }
+
+    &__content {
+      &--name {
+        font-size: var(--font-size-6);
+      }
+    
+      &--venue {
+        font-size: var(--font-size-3);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__image-wrapper {
+      &--image {
+        width: 10rem;
+      }
+    }
+
+    &__content {
+      &--name {
+        font-size: var(--font-size-5);
+      }
+    
+      &--venue {
+        font-size: var(--font-size-2);
       }
     }
   }
@@ -40,12 +82,30 @@
 
     &__image-wrapper {
       &--image {
-        width: 11rem;
+        padding: .3rem;
       }
     }
 
     &__content {
       margin: 1rem 0;
+    }
+  }
+
+  @include media-breakpoint-down(vsm) {
+    &__image-wrapper {
+      &--image {
+        width: 9rem;
+      }
+    }
+
+    &__content {
+      &--name {
+        font-size: var(--font-size-4);
+      }
+    
+      &--venue {
+        font-size: var(--font-size-1);
+      }
     }
   }
 }

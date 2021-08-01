@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './brandLogo.scss'
-import brandLogo from '../../Assets/PNG/brand-logo.png'
+import Logo from '../../Assets/SVG/brand-logo.svg'
 import useHistoryPush from '../../Hooks/useHistory'
 
 export default function BrandLogo() {
@@ -10,13 +10,17 @@ export default function BrandLogo() {
   return (
     <div
       className='brand-logo'
+      onClick={() => history('/')}
     >
       <img
         className='brand-logo__image'
-        src={brandLogo}
+        src={Logo}
         alt="Logo"
-        onClick={() => history('/')}
       />
+
+      <p className='brand-logo__title'>
+        Soccer stat
+      </p>
     </div>
   )
 }

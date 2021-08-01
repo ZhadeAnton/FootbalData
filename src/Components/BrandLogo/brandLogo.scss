@@ -1,9 +1,41 @@
+@import '../../Scss/variables';
+@import '../../Scss/mixins';
+
 .brand-logo {
+  @include flex-align-center;
   cursor: pointer;
+  user-select: none;
 
   &__image {
     display: inline-block;
-    width: 70%;
-    height: auto;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__title {
+    margin: 0 .6rem;
+    text-transform: uppercase;
+    font-family: var(--typography-secondary);
+    font-size: var(--font-size-3);
+    font-weight: 600;
+    color: var(--color-white);
+  }
+
+  @include media-breakpoint-down(md) {
+    &__title {
+      font-size: var(--font-size-2);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__image {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &__title {
+      font-size: var(--font-size-1);
+    }
   }
 }
