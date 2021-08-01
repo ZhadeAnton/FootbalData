@@ -10,7 +10,7 @@ import NotificationProvider from './Providers/NotificationProvider';
 
 ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename='/FootbalData'>
         <NotificationProvider>
           <App />
         </NotificationProvider>
