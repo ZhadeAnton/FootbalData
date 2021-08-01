@@ -40,6 +40,8 @@
   }
 
   @include media-breakpoint-down(lg) {
+    padding: 1.5rem;
+
     &__image-wrapper {
       &--image {
         padding: .4rem;
@@ -77,6 +79,7 @@
   }
 
   @include media-breakpoint-down(sm) {
+    padding: 1rem;
     flex-direction: column;
     text-align: center;
 
