@@ -1,6 +1,102 @@
 @import '../../Scss/mixins';
+@import '../../Scss/variables';
 
 .main {
-  @include full-size;
+  width: 100%;
+  height: 70vh;
+  @include flex-center;
+  overflow: hidden;
   z-index: 1;
+
+  &__overlay {
+    @include full-abs;
+    background-image: url(../../Assets/JPG/main-bg-st.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+
+  &__mask {
+    @include full-abs;
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  &__info {
+    width: 100%;
+    max-width: 32rem;
+    z-index: 10;
+
+    &--title {
+      font-size: var(--font-size-7);
+      margin-bottom: var(--space-md);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: var(--typography-secondary);
+      color: var(--color-red);
+    }
+
+    &--text {
+      margin-bottom: 2rem;
+      font-size: var(--font-size-4);
+      font-family: var(--typography-secondary);
+      color: var(--color-white);
+    }
+
+    &--buttons {
+      display: flex;
+      flex-direction: column;
+
+      & > * {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__info {
+      width: 100%;
+      max-width: 32rem;
+  
+      &--title {
+        font-size: var(--font-size-6);
+        margin-bottom: var(--space-md);
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: var(--typography-primary);
+        color: var(--color-primary);
+      }
+  
+      &--text {
+        font-size: var(--font-size-3);
+      }
+  
+      &--buttons {
+        display: flex;
+        flex-direction: column;
+  
+        & > * {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(vsm) {
+    &__info {
+      &--title {
+        font-size: var(--font-size-5);
+      }
+  
+      &--text {
+        margin-bottom: 1rem;
+        font-size: var(--font-size-2);
+      }
+  
+      &--buttons {
+        & > * {
+          margin-top: .8rem;
+        }
+      }
+    }
+  }
 }

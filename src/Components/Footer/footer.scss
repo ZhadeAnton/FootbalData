@@ -4,8 +4,9 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 1rem;
+  padding: .7rem;
   background-color: var(--color-dark);
+  z-index: 9999;
 
   &__info {
     @include flex-center;
