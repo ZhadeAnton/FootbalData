@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/FootbalData/static/css/main.6192794f.chunk.css",
+    "main.js": "/FootbalData/static/js/main.c74d79a2.chunk.js",
+    "main.js.map": "/FootbalData/static/js/main.c74d79a2.chunk.js.map",
+    "runtime-main.js": "/FootbalData/static/js/runtime-main.0eaac9d6.js",
+    "runtime-main.js.map": "/FootbalData/static/js/runtime-main.0eaac9d6.js.map",
+    "static/css/2.83a79fa7.chunk.css": "/FootbalData/static/css/2.83a79fa7.chunk.css",
+    "static/js/2.66acafb7.chunk.js": "/FootbalData/static/js/2.66acafb7.chunk.js",
+    "static/js/2.66acafb7.chunk.js.map": "/FootbalData/static/js/2.66acafb7.chunk.js.map",
+    "index.html": "/FootbalData/index.html",
+    "static/css/2.83a79fa7.chunk.css.map": "/FootbalData/static/css/2.83a79fa7.chunk.css.map",
+    "static/css/main.6192794f.chunk.css.map": "/FootbalData/static/css/main.6192794f.chunk.css.map",
+    "static/js/2.66acafb7.chunk.js.LICENSE.txt": "/FootbalData/static/js/2.66acafb7.chunk.js.LICENSE.txt",
+    "static/media/brand-logo.9912328d.svg": "/FootbalData/static/media/brand-logo.9912328d.svg",
+    "static/media/football-shirt.8c961f27.svg": "/FootbalData/static/media/football-shirt.8c961f27.svg",
+    "static/media/gitHub.82bea185.svg": "/FootbalData/static/media/gitHub.82bea185.svg",
+    "static/media/mainPage.scss": "/FootbalData/static/media/main-bg-st.8ff9a368.jpg",
+    "static/media/preloader.82ff4e19.svg": "/FootbalData/static/media/preloader.82ff4e19.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0eaac9d6.js",
+    "static/css/2.83a79fa7.chunk.css",
+    "static/js/2.66acafb7.chunk.js",
+    "static/css/main.6192794f.chunk.css",
+    "static/js/main.c74d79a2.chunk.js"
+  ]
+}
