@@ -5,8 +5,15 @@ import './mainPage.scss'
 export default function MainPage() {
   return (
     <main className='main'>
-      <div className='main__wrapper'>
-      </div>
+      <section>
+        <h1>
+          Soccer stat
+        </h1>
+
+        <p>Watch all available leagues</p>
+
+        <button>Leagues</button>
+      </section>
     </main>
   )
 }

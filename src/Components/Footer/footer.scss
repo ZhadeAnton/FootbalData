@@ -1,0 +1,26 @@
+@import '../../Scss/mixins';
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  background-color: var(--color-dark);
+
+  &__info {
+    @include flex-center;
+
+    &--author {
+      font-family: var(--typography-secondary);
+      font-size: var(--font-size-1);
+      color: var(--color-white);
+    }
+
+    &--icon {
+      margin-left: 1rem;
+      cursor: pointer;
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+  }
+}

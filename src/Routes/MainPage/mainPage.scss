@@ -3,8 +3,4 @@
 .main {
   @include full-size;
   z-index: 1;
-
-  &__wrapper {
-    @include full-size;
-  }
 }
